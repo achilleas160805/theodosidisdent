@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Θεοδοσίδης Χαράλαμπος | Χειρουργός Οδοντίατρος Θεσσαλονίκη</title>
 <meta name="description" content="Εξειδικευμένη Χειρουργική Οδοντιατρική, Εμφυτεύματα & Αισθητική Χαμόγελου στη Θεσσαλονίκη. Αγίου Γεωργίου 3, Πλησίον Ροτόντας. Τηλ: 231 021 9927.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2310292D'/%3E%3Cpath d='M32 14c-6 0-9 3-12 3s-5-1-7 1c-2 3-1 9 1 14 2 6 4 9 5 14 1 4 2 6 4 6s3-3 3-8c0-4 1-6 3-6s3 2 3 6c0 5 1 8 3 8s3-2 4-6c1-5 3-8 5-14 2-5 3-11 1-14-2-2-4-1-7-1s-6-3-12-3z' fill='%23DCE6E4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap&subset=greek" rel="stylesheet">
@@ -31,7 +32,10 @@ section{padding-block:clamp(64px,9vw,120px)}
 .top b{font-weight:600;color:#fff}
 header{position:sticky;top:0;z-index:20;background:rgba(244,246,245,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
-.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand{display:flex;align-items:center;gap:14px;line-height:1.1}
+.brand .mk{width:38px;height:38px;flex:none;background:var(--ink);border-radius:8px;display:grid;place-items:center}
+.brand .mk svg{width:24px;height:24px;display:block}
+.brand .txt{display:flex;flex-direction:column}
 .brand strong{font:500 1.55rem var(--serif);letter-spacing:.06em}
 .brand span{font-size:.78rem;color:var(--slate);margin-top:4px}
 nav{display:flex;gap:30px;font-size:.92rem;font-weight:500}
@@ -41,7 +45,9 @@ nav a:hover{border-color:var(--ink)}
 .tel:hover{background:var(--teal)}
 
 .hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(82vh,760px)}
-.hero-l{background:var(--ink);color:#fff;padding:clamp(48px,8vw,110px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px}
+.hero-l{position:relative;color:#fff;padding:clamp(48px,8vw,110px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden}
+.hero-l::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(16,41,45,.96) 0%,rgba(16,41,45,.82) 45%,rgba(43,107,112,.65) 100%),url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;z-index:0}
+.hero-l>*{position:relative;z-index:1}
 .hero-l small{font-size:.9rem;color:var(--on-dark)}
 .hero-l h1{font-size:clamp(2.5rem,5.4vw,4.9rem);max-width:13ch}
 .hero-l p{max-width:46ch;color:var(--on-dark);font-size:1.05rem}
@@ -54,7 +60,9 @@ nav a:hover{border-color:var(--ink)}
 .hero-r footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px;font-size:.85rem;font-weight:600;color:var(--slate)}
 
 .doc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px);align-items:stretch}
-.plate{background:var(--ink);color:#fff;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:flex-end;min-height:440px}
+.plate{position:relative;color:#fff;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:flex-end;min-height:440px;overflow:hidden}
+.plate::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,41,45,.15) 0%,rgba(16,41,45,.88) 78%),url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;z-index:0}
+.plate>*{position:relative;z-index:1}
 .plate strong{font:400 clamp(1.8rem,3vw,2.6rem)/1.15 var(--serif)}
 .plate span{color:var(--on-dark);margin-top:10px}
 .plate i{margin-top:28px;padding-top:14px;border-top:1px solid rgba(255,255,255,.25);font-style:normal;font-size:.85rem;color:var(--on-dark)}
@@ -62,10 +70,12 @@ nav a:hover{border-color:var(--ink)}
 .doc-t p{max-width:60ch;color:var(--slate)}
 .doc-t p strong{color:var(--ink);font-weight:600}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-top:26px;border-top:1px solid var(--line)}
-.pillars h3{font:600 1rem var(--sans);margin-bottom:6px}
+.pillars h3{font:600 1rem var(--sans);margin-bottom:6px;display:flex;align-items:center;gap:9px}
+.pillars h3 svg{width:20px;height:20px;flex:none;stroke:var(--teal);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .pillars p{font-size:.9rem}
 
-.services{background:var(--mist)}
+.services{background:var(--mist);position:relative;overflow:hidden}
+.services .wrap{position:relative;z-index:1}
 .head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
 .head p{max-width:34ch;color:var(--slate);font-size:.95rem}
 .list{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,6vw,96px)}
@@ -73,18 +83,23 @@ nav a:hover{border-color:var(--ink)}
 .row:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
 .row h3{font-size:1.5rem;transition:color .25s}
 .row p{color:var(--slate);font-size:.95rem;max-width:50ch}
-.row span{font-size:.85rem;font-weight:700;color:var(--teal);margin-top:6px}
+.row span{font-size:.85rem;font-weight:700;color:var(--teal);margin-top:6px;display:inline-flex;align-items:center;gap:7px}
+.row span::after{content:"→";transition:transform .25s}
+.row:hover span::after{transform:translateX(4px)}
 .row:hover h3{color:var(--teal)}
 
 .quotes{display:grid;grid-template-columns:repeat(3,1fr)}
 .quotes figure{padding:8px clamp(20px,3vw,44px) 8px 0;margin-right:clamp(20px,3vw,44px);border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
 .quotes figure:last-child{border:0;margin:0}
+.quotes .qm{width:30px;height:30px;fill:var(--line)}
 .quotes blockquote{font:400 1.4rem/1.45 var(--serif)}
 .quotes figcaption{font-size:.9rem;color:var(--slate)}
 .quotes figcaption b{display:block;color:var(--ink);font-weight:600}
 .more{margin-top:56px}
 
-.place{background:var(--ink);color:#fff}
+.place{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.place::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;opacity:.08;z-index:0}
+.place .wrap{position:relative;z-index:1}
 .loc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
 .loc-t{display:flex;flex-direction:column;gap:28px}
 .loc-t>p{color:var(--on-dark);max-width:52ch}
@@ -93,7 +108,7 @@ nav a:hover{border-color:var(--ink)}
 .loc dd{font-size:1.05rem}
 .loc dd small{display:block;font-size:.85rem;color:var(--on-dark)}
 .loc dd a.n{font:400 2rem var(--serif)}
-.book{border:1px solid rgba(255,255,255,.3);padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.book{border:1px solid rgba(255,255,255,.3);padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;background:rgba(16,41,45,.5);backdrop-filter:blur(4px)}
 .book h3{font-size:1.4rem}.book p{font-size:.95rem;color:var(--on-dark)}
 .map{display:flex;flex-direction:column;gap:14px}
 .map iframe{width:100%;height:520px;border:0;filter:grayscale(.85);transition:filter .4s}
@@ -120,7 +135,7 @@ dialog[open]{animation:pop .25s ease-out}
 @media(max-width:960px){
 nav{display:none}
 .hero,.doc,.loc,.list{grid-template-columns:1fr}
-.plate{min-height:260px}
+.plate{min-height:340px}
 .quotes{grid-template-columns:1fr;gap:36px}
 .quotes figure{border:0;margin:0;padding:0 0 36px;border-bottom:1px solid var(--line)}
 .quotes figure:last-child{border:0;padding:0}
@@ -146,7 +161,12 @@ body{padding-bottom:72px}
 </div></div>
 
 <header><div class="wrap">
-<a class="brand" href="#"><strong>ΘΕΟΔΟΣΙΔΗΣ</strong><span>Χειρουργός Οδοντίατρος</span></a>
+<a class="brand" href="#">
+<span class="mk" aria-hidden="true">
+<svg viewBox="0 0 64 64"><path d="M32 12c-6 0-9 3-12 3s-5-1-7 1c-2 3-1 9 1 14 2 6 4 9 5 14 1 4 2 6 4 6s3-3 3-8c0-4 1-6 3-6s3 2 3 6c0 5 1 8 3 8s3-2 4-6c1-5 3-8 5-14 2-5 3-11 1-14-2-2-4-1-7-1s-6-3-12-3z" fill="#DCE6E4"/><path d="M32 12c-6 0-9 3-12 3s-5-1-7 1c-2 3-1 9 1 14 2 6 4 9 5 14 1 4 2 6 4 6s3-3 3-8c0-4 1-6 3-6s3 2 3 6c0 5 1 8 3 8s3-2 4-6c1-5 3-8 5-14 2-5 3-11 1-14-2-2-4-1-7-1s-6-3-12-3z" fill="none" stroke="#2B6B70" stroke-width="1.6"/></svg>
+</span>
+<span class="txt"><strong>ΘΕΟΔΟΣΙΔΗΣ</strong><span>Χειρουργός Οδοντίατρος</span></span>
+</a>
 <nav aria-label="Κύρια πλοήγηση">
 <a href="#philosophy">Φιλοσοφία</a><a href="#doctor">Ο Ιατρός</a><a href="#services">Υπηρεσίες</a><a href="#reviews">Αξιολογήσεις</a><a href="#location">Τοποθεσία</a>
 </nav>
@@ -180,9 +200,9 @@ body{padding-bottom:72px}
 <p>Ο <strong>Χαράλαμπος Θεοδοσίδης</strong> ασκεί τη χειρουργική και αισθητική οδοντιατρική με γνώμονα τη μέγιστη επιστημονική ακρίβεια, τον σεβασμό στον ασθενή και την απόλυτη άνεση κατά τη διάρκεια κάθε θεραπείας.</p>
 <p>Στο ιατρείο μας στην Αγίου Γεωργίου 3, στο κέντρο της Θεσσαλονίκης, κάθε περιστατικό αντιμετωπίζεται ως μοναδικό. Πιστεύουμε ότι ένα υγιές και όμορφο χαμόγελο είναι προϊόν προσεκτικού σχεδιασμού, ανώδυνων πρωτοκόλλων και ειλικρινούς επικοινωνίας.</p>
 <div class="pillars">
-<div><h3>Ανώδυνη προσέγγιση</h3><p>Σύγχρονες τεχνικές αναισθησίας και ήπιοι χειρουργικοί χειρισμοί.</p></div>
-<div><h3>Αρχιτεκτονική αισθητική</h3><p>Σχεδιασμός που σέβεται τα φυσικά ανατομικά χαρακτηριστικά σας.</p></div>
-<div><h3>Αυστηρή αποστείρωση</h3><p>Πρότυπα πρωτόκολλα υγιεινής και απολύμανσης τελευταίας γενιάς.</p></div>
+<div><h3><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>Ανώδυνη προσέγγιση</h3><p>Σύγχρονες τεχνικές αναισθησίας και ήπιοι χειρουργικοί χειρισμοί.</p></div>
+<div><h3><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5.4L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-1.6z"/></svg>Αρχιτεκτονική αισθητική</h3><p>Σχεδιασμός που σέβεται τα φυσικά ανατομικά χαρακτηριστικά σας.</p></div>
+<div><h3><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Αυστηρή αποστείρωση</h3><p>Πρότυπα πρωτόκολλα υγιεινής και απολύμανσης τελευταίας γενιάς.</p></div>
 </div>
 </div>
 </div></section>
@@ -202,9 +222,9 @@ body{padding-bottom:72px}
 <section id="reviews"><div class="wrap">
 <div class="head"><h2>Λόγια Ασθενών</h2><p>Διαβάστε αυτούσιες εμπειρίες ασθενών που μας εμπιστεύτηκαν το χαμόγελό τους.</p></div>
 <div class="quotes">
-<figure><blockquote>«Δεν υπάρχουν λόγια για την εξαιρετική εξυπηρέτηση και την μοναδική αγάπη για το έργο αυτού του Ανθρώπου!»</blockquote><figcaption><b>Plumbum 82</b>Google Maps Review</figcaption></figure>
-<figure><blockquote>«Εξαιρετικός επιστήμονας, υπομονετικός και με απόλυτη έμφαση στη λεπτομέρεια. Η θεραπεία ήταν εντελώς ανώδυνη.»</blockquote><figcaption><b>Μαριάννα Ρηγούλη</b>Google Maps Review</figcaption></figure>
-<figure><blockquote>«Άμεση εξυπηρέτηση σε επείγον περιστατικό. Άψογος επαγγελματίας και καθαρός χώρος στην Αγίου Γεωργίου.»</blockquote><figcaption><b>maria a</b>Google Maps Review</figcaption></figure>
+<figure><svg class="qm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4H9c0 2 1 3 2 3v3c-3 0-4-2-4-5zm8 0h4v4h-2c0 2 1 3 2 3v3c-3 0-4-2-4-5z"/></svg><blockquote>«Δεν υπάρχουν λόγια για την εξαιρετική εξυπηρέτηση και την μοναδική αγάπη για το έργο αυτού του Ανθρώπου!»</blockquote><figcaption><b>Plumbum 82</b>Google Maps Review</figcaption></figure>
+<figure><svg class="qm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4H9c0 2 1 3 2 3v3c-3 0-4-2-4-5zm8 0h4v4h-2c0 2 1 3 2 3v3c-3 0-4-2-4-5z"/></svg><blockquote>«Εξαιρετικός επιστήμονας, υπομονετικός και με απόλυτη έμφαση στη λεπτομέρεια. Η θεραπεία ήταν εντελώς ανώδυνη.»</blockquote><figcaption><b>Μαριάννα Ρηγούλη</b>Google Maps Review</figcaption></figure>
+<figure><svg class="qm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4H9c0 2 1 3 2 3v3c-3 0-4-2-4-5zm8 0h4v4h-2c0 2 1 3 2 3v3c-3 0-4-2-4-5z"/></svg><blockquote>«Άμεση εξυπηρέτηση σε επείγον περιστατικό. Άψογος επαγγελματίας και καθαρός χώρος στην Αγίου Γεωργίου.»</blockquote><figcaption><b>maria a</b>Google Maps Review</figcaption></figure>
 </div>
 <a class="btn line more" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Δείτε τις ζωντανές αξιολογήσεις στο Google Maps</a>
 </div></section>
