@@ -81,12 +81,39 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .tel{font-weight:600;letter-spacing:.04em;font-size:.82rem;padding:11px 20px;border:1px solid var(--line);color:var(--ink);transition:all .3s var(--ease)}
 .tel:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
+/* HAMBURGER */
+.burger{display:none;width:44px;height:44px;background:none;border:1px solid var(--line-2);cursor:pointer;padding:0;position:relative;transition:border-color .3s var(--ease);flex:none}
+.burger:hover{border-color:var(--accent)}
+.burger span{position:absolute;left:50%;top:50%;width:20px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.burger span:nth-child(1){transform:translate(-50%,-7px)}
+.burger span:nth-child(2){transform:translate(-50%,-50%)}
+.burger span:nth-child(3){transform:translate(-50%,7px)}
+.burger.open span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mob-menu{position:fixed;inset:0;background:rgba(10,20,30,.6);backdrop-filter:blur(4px);z-index:40;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s var(--ease)}
+.mob-menu.open{opacity:1;visibility:visible}
+.mob-menu .panel{position:absolute;top:0;right:0;bottom:0;width:min(340px,85vw);background:var(--bg-2);border-left:1px solid var(--line-2);padding:clamp(24px,6vw,40px);display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:transform .45s var(--ease);box-shadow:-20px 0 60px rgba(0,0,0,.4)}
+.mob-menu.open .panel{transform:translateX(0)}
+.mob-menu .close{position:absolute;top:20px;right:20px;width:40px;height:40px;background:none;border:1px solid var(--line-2);cursor:pointer;color:var(--ink);font-size:1rem;transition:all .25s var(--ease)}
+.mob-menu .close:hover{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(90deg)}
+.mob-menu .m-title{font:400 .68rem var(--sans);color:var(--ink-mute);letter-spacing:.3em;text-transform:uppercase;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--line-2)}
+.mob-menu nav a{display:block;padding:16px 0;font-size:1.05rem;color:var(--ink-soft);border-bottom:1px solid var(--line-2);letter-spacing:.02em;font-weight:500}
+.mob-menu nav a:hover{color:var(--accent);padding-left:8px;transition:padding-left .3s var(--ease)}
+.mob-menu nav a:last-child{border-bottom:0}
+.mob-menu .m-foot{margin-top:auto;padding-top:24px;border-top:1px solid var(--line-2)}
+.mob-menu .m-foot a{display:flex;align-items:center;gap:12px;padding:12px 0;color:var(--ink-soft);font-size:.9rem}
+.mob-menu .m-foot a:hover{color:var(--accent)}
+.mob-menu .m-foot svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:1.6;flex:none}
+
 /* HERO */
 .hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(85vh,780px);position:relative;overflow:hidden}
 .hero-l{position:relative;color:var(--ink);padding:clamp(60px,8vw,120px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden}
 .hero-l::before{content:"";position:absolute;inset:-5% 0 -5% 0;
   background:linear-gradient(115deg,rgba(26,42,58,.9) 0%,rgba(34,55,74,.78) 50%,rgba(44,70,91,.62) 100%),
-  url('hero.jpg') center/cover no-repeat;
+  var(--hero-img,url('hero.jpg')) center/cover no-repeat;
   z-index:0;will-change:transform}
 .hero-l>*{position:relative;z-index:1;opacity:0;transform:translateY(24px);animation:heroIn .9s var(--ease) forwards}
 .hero-l>small{animation-delay:.15s}
@@ -120,7 +147,7 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .plate{position:relative;color:var(--ink);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:flex-end;min-height:520px;overflow:hidden;border:1px solid var(--line-2)}
 .plate::before{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(26,42,58,.15) 0%,rgba(26,42,58,.98) 88%),
-  url('hero2.jpg') center/cover no-repeat;
+  var(--plate-img,url('hero2.jpg')) center/cover no-repeat;
   z-index:0;transition:transform 1.2s var(--ease)}
 .plate:hover::before{transform:scale(1.04)}
 .plate>*{position:relative;z-index:1}
@@ -144,12 +171,6 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .head p{max-width:36ch;color:var(--ink-mute);font-size:.92rem}
 .list{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(36px,6vw,100px)}
 .row{all:unset;box-sizing:border-box;display:grid;gap:8px;padding:32px 0;border-top:1px solid var(--line-2);cursor:pointer;position:relative;transition:padding-left .45s var(--ease)}
-.row:nth-child(1){transition-delay:0s}
-.row:nth-child(2){transition-delay:.05s}
-.row:nth-child(3){transition-delay:.1s}
-.row:nth-child(4){transition-delay:.15s}
-.row:nth-child(5){transition-delay:.2s}
-.row:nth-child(6){transition-delay:.25s}
 .row:last-child,.row:nth-last-child(2){border-bottom:1px solid var(--line-2)}
 .row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(142,180,206,.05),transparent);transition:width .5s var(--ease);pointer-events:none}
 .row:hover{padding-left:22px}
@@ -177,7 +198,7 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 /* LOCATION */
 .place{background:var(--bg);position:relative;overflow:hidden}
 .place::before{content:"";position:absolute;inset:0;
-  background:url('hero.jpg') center/cover no-repeat;
+  background:var(--hero-img,url('hero.jpg')) center/cover no-repeat;
   opacity:.06;z-index:0}
 .place .wrap{position:relative;z-index:2}
 .loc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,100px);align-items:start}
@@ -239,6 +260,8 @@ dialog[open]{animation:pop .3s var(--ease)}
 .bar{display:none}
 @media(max-width:960px){
 nav{display:none}
+.tel{display:none}
+.burger{display:block}
 .hero,.doc,.loc,.list{grid-template-columns:1fr}
 .plate{min-height:400px}
 .quotes{grid-template-columns:1fr;gap:36px}
@@ -249,15 +272,16 @@ nav{display:none}
 @media(max-width:640px){
 body{padding-bottom:72px}
 .top .wrap>span{display:none}
-.top .locs span:nth-child(2){display:none}
-.tel{display:none}
+.top .locs{gap:14px;font-size:.74rem;width:100%;justify-content:center}
+header .wrap{height:76px;gap:14px}
+.brand{gap:12px}
+.brand .name{font-size:.82rem;letter-spacing:.16em}
+.brand .sub{font-size:.56rem;letter-spacing:.2em}
+.brand .divider{height:30px}
+.brand .mk{width:26px;height:26px}
 .pillars{grid-template-columns:1fr}
-header .wrap{height:76px}
-.brand .name{font-size:.9rem;letter-spacing:.2em}
-.brand .sub{font-size:.6rem;letter-spacing:.24em}
-.brand .divider{height:32px}
 .bar{display:flex;gap:6px;position:fixed;inset:auto 0 0;z-index:30;padding:10px;background:rgba(26,42,58,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line-2)}
-.bar a{padding:13px 8px;text-align:center;font-weight:600;font-size:.76rem;border:1px solid var(--line-2);color:var(--ink);letter-spacing:.04em;flex:1}
+.bar a{padding:13px 8px;text-align:center;font-weight:600;font-size:.72rem;border:1px solid var(--line-2);color:var(--ink);letter-spacing:.04em;flex:1}
 .bar a:first-child{background:var(--accent);color:var(--bg);border-color:var(--accent)}
 }
 @media(prefers-reduced-motion:reduce){
@@ -294,11 +318,31 @@ header .wrap{height:76px}
 <a href="#doctor">Ο Ιατρός</a><a href="#services">Υπηρεσίες</a><a href="#reviews">Αξιολογήσεις</a><a href="#location">Ιατρεία</a>
 </nav>
 <a class="tel" href="tel:2310219927">231 021 9927</a>
+<button class="burger" id="burger" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="mobMenu">
+<span></span><span></span><span></span>
+</button>
 </div></header>
+
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+<div class="panel">
+<button class="close" id="mobClose" aria-label="Κλείσιμο μενού">✕</button>
+<div class="m-title">Μενού</div>
+<nav aria-label="Κινητό μενού">
+<a href="#doctor">Ο Ιατρός</a>
+<a href="#services">Υπηρεσίες</a>
+<a href="#reviews">Αξιολογήσεις</a>
+<a href="#location">Ιατρεία</a>
+</nav>
+<div class="m-foot">
+<a href="tel:2310219927"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg>231 021 9927 — Θεσσαλονίκη</a>
+<a href="tel:2371061327"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg>2371 061327 — Παλαιόχωρα</a>
+</div>
+</div>
+</div>
 
 <main>
 <div class="hero">
-<div class="hero-l" id="heroBg">
+<div class="hero-l">
 <small>Θεσσαλονίκη • Παλαιόχωρα Χαλκιδικής</small>
 <h1>Αρχιτεκτονική <em>Χαμόγελου</em> &amp; Προηγμένη Χειρουργική.</h1>
 <p>Συνδυάζοντας την επιστημονική αυστηρότητα της χειρουργικής στόματος με την αισθητική τελειότητα. Μια εξατομικευμένη, ανώδυνη οδοντιατρική εμπειρία σε δύο έδρες.</p>
@@ -401,6 +445,31 @@ header .wrap{height:76px}
 </div></dialog>
 
 <script>
+/* MOBILE IMAGE SWAP — χρησιμοποιεί mobile εικόνες αν υπάρχουν */
+(function(){
+  const isMobile=window.matchMedia('(max-width:640px)').matches;
+  if(isMobile){
+    document.documentElement.style.setProperty('--hero-img',"url('hero-mobile.jpg')");
+    document.documentElement.style.setProperty('--plate-img',"url('hero2-mobile.jpg')");
+  }else{
+    document.documentElement.style.setProperty('--hero-img',"url('hero.jpg')");
+    document.documentElement.style.setProperty('--plate-img',"url('hero2.jpg')");
+  }
+})();
+
+/* MOBILE MENU */
+const burger=document.getElementById('burger');
+const mobMenu=document.getElementById('mobMenu');
+const mobClose=document.getElementById('mobClose');
+function openMenu(){mobMenu.classList.add('open');burger.classList.add('open');burger.setAttribute('aria-expanded','true');mobMenu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeMenu(){mobMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');mobMenu.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+burger.addEventListener('click',()=>mobMenu.classList.contains('open')?closeMenu():openMenu());
+mobClose.addEventListener('click',closeMenu);
+mobMenu.addEventListener('click',e=>{if(e.target===mobMenu)closeMenu();});
+mobMenu.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobMenu.classList.contains('open'))closeMenu();});
+
+/* SERVICES DIALOG */
 const S={
 implants:{t:"Χειρουργική Στόματος & Εμφυτεύματα",a:"Τα οδοντικά εμφυτεύματα αποτελούν τη σύγχρονη, μόνιμη και πλέον φυσική λύση για την αντικατάσταση ελλειπόντων δοντιών. Με τη χρήση τιτανίου υψηλής βιοσυμβατότητας, αποκαθιστούμε πλήρως τη μασητική λειτουργία και την αισθητική του στόματος.",b:"Η χειρουργική διαδικασία εκτελείται με απόλυτα ανώδυνα τοπικά πρωτόκολλα, ψηφιακό σχεδιασμό τοποθέτησης και ελάχιστα επεμβατικές τεχνικές για ταχεία επούλωση.",l:["Αντικατάσταση μονών ή πολλαπλών ελλειπόντων δοντιών","Χειρουργική αφαίρεση εγκλείστων φρονιμιτών","Οστική ανάπλαση (μοσχεύματα) & ανύψωση ιγμορείου","Ψηφιακά καθοδηγούμενη τοποθέτηση εμφυτευμάτων"]},
 aesthetics:{t:"Αισθητική Οδοντιατρική & Όψεις Πορσελάνης",a:"Οι όψεις πορσελάνης και ρητίνης επιτρέπουν τη διόρθωση ατελειών στο σχήμα, το μέγεθος, το χρώμα και τα διαστήματα μεταξύ των δοντιών, προσφέροντας ένα λαμπερό αλλά απόλυτα φυσικό αποτέλεσμα.",b:"Κάθε όψη κατασκευάζεται εξατομικευμένα με βάση τις αναλογίες του προσώπου σας, διατηρώντας τη μέγιστη δυνατή ποσότητα φυσικής οδοντικής ουσίας.",l:["Όψεις Πορσελάνης (Porcelain Veneers)","Όψεις Ρητίνης (Composite Veneers / Bonding)","Αποκατάσταση σπασμένων ή δυσχρωμικών δοντιών","Ανασχεδιασμός γραμμής χαμόγελου"]},
@@ -418,6 +487,7 @@ document.querySelectorAll('.row').forEach(r=>r.addEventListener('click',()=>{
 }));
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 
+/* MAP TOGGLE */
 const MAPS={
 thes:{src:"https://www.google.com/maps?q=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη&hl=el&output=embed",link:"https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη"},
 pal:{src:"https://www.google.com/maps?q=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Παλαιόχωρα+Χαλκιδικής&hl=el&output=embed",link:"https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Παλαιόχωρα+Χαλκιδικής"}
@@ -440,22 +510,20 @@ const io=new IntersectionObserver((entries)=>{
 },{threshold:.12,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>io.observe(el));
 
-/* HEADER SHADOW ON SCROLL */
+/* HEADER SHADOW */
 const hdr=document.getElementById('hdr');
 window.addEventListener('scroll',()=>{
   hdr.classList.toggle('scrolled',window.scrollY>20);
 },{passive:true});
 
 /* HERO PARALLAX */
-const heroBg=document.querySelector('.hero-l');
 let ticking=false;
 window.addEventListener('scroll',()=>{
   if(!ticking && window.scrollY<window.innerHeight){
     requestAnimationFrame(()=>{
       const y=window.scrollY;
-      heroBg.style.setProperty('--py',y*0.25+'px');
-      const before=heroBg;
-      if(before) before.style.setProperty('background-position-y',`calc(50% + ${y*0.25}px)`);
+      const h=document.querySelector('.hero-l');
+      if(h) h.style.setProperty('background-position-y',`calc(50% + ${y*0.25}px)`);
       ticking=false;
     });
     ticking=true;
