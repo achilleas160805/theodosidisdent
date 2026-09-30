@@ -1,1246 +1,269 @@
 <!DOCTYPE html>
-<html lang="el" class="scroll-smooth">
+<html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Θεοδοσίδης Χαράλαμπος | Χειρουργός Οδοντίατρος Θεσσαλονίκη</title>
-    <meta name="description" content="Εξειδικευμένη Χειρουργική Οδοντιατρική, Εμφυτεύματα & Αισθητική Χαμόγελου στη Θεσσαλονίκη. Αγίου Γεωργίου 3, Πλησίον Ροτόντας. Τηλ: 231 021 9927.">
-    
-    <!-- Google Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        espresso: {
-                            DEFAULT: '#12100E',
-                            surface: '#181512',
-                            card: '#201C18',
-                            border: '#2E2822'
-                        },
-                        obsidian: '#1C1917',
-                        bronze: {
-                            DEFAULT: '#C5A880',
-                            light: '#D8C3A5',
-                            dark: '#9A7D56'
-                        },
-                        gold: {
-                            DEFAULT: '#D4AF37',
-                            muted: 'rgba(212, 175, 55, 0.2)'
-                        },
-                        cream: {
-                            DEFAULT: '#F9F8F5',
-                            muted: '#E6E2DA',
-                            dark: '#C8C3B8'
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"Space Mono"', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        ::selection {
-            background-color: #C5A880;
-            color: #12100E;
-        }
-        
-        .border-gold-subtle {
-            border-color: rgba(197, 168, 128, 0.25);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Θεοδοσίδης Χαράλαμπος | Χειρουργός Οδοντίατρος Θεσσαλονίκη</title>
+<meta name="description" content="Εξειδικευμένη Χειρουργική Οδοντιατρική, Εμφυτεύματα & Αισθητική Χαμόγελου στη Θεσσαλονίκη. Αγίου Γεωργίου 3, Πλησίον Ροτόντας. Τηλ: 231 021 9927.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap&subset=greek" rel="stylesheet">
+<style>
+:root{--paper:#F4F6F5;--mist:#E3E9E8;--line:#CFD8D6;--ink:#10292D;--slate:#52646A;--teal:#2B6B70;--on-dark:#DCE6E4;
+--serif:"Source Serif 4","Noto Serif",Georgia,serif;--sans:"Manrope","Segoe UI",Arial,sans-serif;--pad:clamp(20px,5vw,72px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font:400 17px/1.65 var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,3.6vw,3rem);max-width:20ch}
+.wrap{padding-inline:var(--pad);max-width:1320px;margin-inline:auto}
+section{padding-block:clamp(64px,9vw,120px)}
+.btn{display:inline-block;padding:15px 28px;font:600 .92rem var(--sans);border:1px solid var(--ink);transition:background .25s,color .25s}
+.btn.solid{background:var(--ink);color:#fff}.btn.solid:hover{background:var(--teal);border-color:var(--teal)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.dark .btn.solid{background:#fff;color:var(--ink);border-color:#fff}.dark .btn.solid:hover{background:var(--mist)}
+.dark .btn.line{border-color:rgba(255,255,255,.5);color:#fff}.dark .btn.line:hover{background:#fff;color:var(--ink)}
 
-        .border-gold-light {
-            border-color: rgba(212, 175, 55, 0.18);
-        }
-        
-        .bg-grid-bespoke {
-            background-image: linear-gradient(to right, rgba(197, 168, 128, 0.035) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(197, 168, 128, 0.035) 1px, transparent 1px);
-            background-size: 56px 56px;
-        }
+.top{background:var(--ink);color:var(--on-dark);font-size:.82rem}
+.top .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:9px}
+.top b{font-weight:600;color:#fff}
+header{position:sticky;top:0;z-index:20;background:rgba(244,246,245,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand strong{font:500 1.55rem var(--serif);letter-spacing:.06em}
+.brand span{font-size:.78rem;color:var(--slate);margin-top:4px}
+nav{display:flex;gap:30px;font-size:.92rem;font-weight:500}
+nav a{padding-block:4px;border-bottom:1px solid transparent;transition:border-color .25s}
+nav a:hover{border-color:var(--ink)}
+.tel{font-weight:700;letter-spacing:.02em;padding:11px 20px;background:var(--ink);color:#fff;transition:background .25s}
+.tel:hover{background:var(--teal)}
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #12100E;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2E2822;
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #C5A880;
-        }
+.hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(82vh,760px)}
+.hero-l{background:var(--ink);color:#fff;padding:clamp(48px,8vw,110px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px}
+.hero-l small{font-size:.9rem;color:var(--on-dark)}
+.hero-l h1{font-size:clamp(2.5rem,5.4vw,4.9rem);max-width:13ch}
+.hero-l p{max-width:46ch;color:var(--on-dark);font-size:1.05rem}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.hero-r{padding:clamp(40px,6vw,90px) var(--pad);display:flex;flex-direction:column;justify-content:center}
+.hero-r h2{font-size:1rem;font:600 .9rem var(--sans);color:var(--teal);margin-bottom:8px;max-width:none}
+.hero-r div{padding-block:22px;border-top:1px solid var(--line)}
+.hero-r h3{font-size:1.5rem;margin-bottom:6px}
+.hero-r p{font-size:.95rem;color:var(--slate)}
+.hero-r footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:16px;font-size:.85rem;font-weight:600;color:var(--slate)}
 
-        /* Glassmorphism Surface */
-        .glass-editorial {
-            background: rgba(24, 21, 18, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
+.doc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px);align-items:stretch}
+.plate{background:var(--ink);color:#fff;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:flex-end;min-height:440px}
+.plate strong{font:400 clamp(1.8rem,3vw,2.6rem)/1.15 var(--serif)}
+.plate span{color:var(--on-dark);margin-top:10px}
+.plate i{margin-top:28px;padding-top:14px;border-top:1px solid rgba(255,255,255,.25);font-style:normal;font-size:.85rem;color:var(--on-dark)}
+.doc-t{display:flex;flex-direction:column;gap:26px;justify-content:center}
+.doc-t p{max-width:60ch;color:var(--slate)}
+.doc-t p strong{color:var(--ink);font-weight:600}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-top:26px;border-top:1px solid var(--line)}
+.pillars h3{font:600 1rem var(--sans);margin-bottom:6px}
+.pillars p{font-size:.9rem}
 
-        /* Metallic Text Gradient Animation */
-        @keyframes metallicShimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        .text-shimmer {
-            background: linear-gradient(90deg, #F9F8F5 0%, #C5A880 25%, #FFF8EE 50%, #C5A880 75%, #F9F8F5 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: metallicShimmer 6s linear infinite;
-        }
+.services{background:var(--mist)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
+.head p{max-width:34ch;color:var(--slate);font-size:.95rem}
+.list{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,6vw,96px)}
+.row{all:unset;box-sizing:border-box;display:grid;gap:8px;padding:30px 0;border-top:1px solid var(--slate);cursor:pointer}
+.row:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+.row h3{font-size:1.5rem;transition:color .25s}
+.row p{color:var(--slate);font-size:.95rem;max-width:50ch}
+.row span{font-size:.85rem;font-weight:700;color:var(--teal);margin-top:6px}
+.row:hover h3{color:var(--teal)}
 
-        /* Pulsing Phone Ring Effect */
-        @keyframes pulseRing {
-            0% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.6); }
-            70% { box-shadow: 0 0 0 16px rgba(197, 168, 128, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0); }
-        }
-        .pulse-phone-ring {
-            animation: pulseRing 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-        }
+.quotes{display:grid;grid-template-columns:repeat(3,1fr)}
+.quotes figure{padding:8px clamp(20px,3vw,44px) 8px 0;margin-right:clamp(20px,3vw,44px);border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.quotes figure:last-child{border:0;margin:0}
+.quotes blockquote{font:400 1.4rem/1.45 var(--serif)}
+.quotes figcaption{font-size:.9rem;color:var(--slate)}
+.quotes figcaption b{display:block;color:var(--ink);font-weight:600}
+.more{margin-top:56px}
 
-        /* Bespoke Luxury Underline Effect */
-        .btn-luxury-line {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .btn-luxury-line::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: #C5A880;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .btn-luxury-line:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
+.place{background:var(--ink);color:#fff}
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.loc-t{display:flex;flex-direction:column;gap:28px}
+.loc-t>p{color:var(--on-dark);max-width:52ch}
+.loc dl div{padding-block:20px;border-top:1px solid rgba(255,255,255,.22)}
+.loc dt{font-size:.85rem;color:var(--on-dark);margin-bottom:4px}
+.loc dd{font-size:1.05rem}
+.loc dd small{display:block;font-size:.85rem;color:var(--on-dark)}
+.loc dd a.n{font:400 2rem var(--serif)}
+.book{border:1px solid rgba(255,255,255,.3);padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.book h3{font-size:1.4rem}.book p{font-size:.95rem;color:var(--on-dark)}
+.map{display:flex;flex-direction:column;gap:14px}
+.map iframe{width:100%;height:520px;border:0;filter:grayscale(.85);transition:filter .4s}
+.map iframe:hover{filter:none}
 
-        /* Background Macro Slide Zoom Animations */
-        @keyframes subtleZoom {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-        .animate-zoom {
-            animation: subtleZoom 24s infinite ease-in-out;
-        }
+footer.f{background:var(--paper);border-top:1px solid var(--line);padding-block:40px;font-size:.88rem;color:var(--slate)}
+footer.f .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer.f strong{display:block;font:500 1.2rem var(--serif);letter-spacing:.05em;color:var(--ink)}
 
-        /* Scroll Reveal Animation Classes */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-        .reveal-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+dialog{border:0;padding:0;max-width:640px;width:calc(100% - 32px);background:var(--paper);color:var(--ink);margin:auto}
+dialog::backdrop{background:rgba(16,41,45,.7)}
+dialog[open]{animation:pop .25s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}}
+.d{padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:18px}
+.d h3{font-size:clamp(1.6rem,3vw,2.1rem);padding-right:40px}
+.d p{color:var(--slate);font-size:.96rem}
+.d h4{font:600 .9rem var(--sans);margin-top:6px}
+.d ul{padding-left:20px;font-size:.95rem;color:var(--slate)}.d li{padding-block:3px}
+.x{position:absolute;top:14px;right:14px;width:40px;height:40px;background:none;border:1px solid var(--line);cursor:pointer;font-size:1.1rem;color:var(--ink)}
+.x:hover{background:var(--mist)}
+.d .btn{align-self:flex-start;margin-top:8px}
 
-        /* 3D Tilt Card Container */
-        .tilt-card {
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-            transform-style: preserve-3d;
-        }
-    </style>
+.bar{display:none}
+@media(max-width:960px){
+nav{display:none}
+.hero,.doc,.loc,.list{grid-template-columns:1fr}
+.plate{min-height:260px}
+.quotes{grid-template-columns:1fr;gap:36px}
+.quotes figure{border:0;margin:0;padding:0 0 36px;border-bottom:1px solid var(--line)}
+.quotes figure:last-child{border:0;padding:0}
+}
+@media(max-width:640px){
+body{padding-bottom:72px}
+.top .wrap>span{display:none}
+.tel{display:none}
+.pillars{grid-template-columns:1fr}
+.bar{display:flex;gap:8px;position:fixed;inset:auto 0 0;z-index:30;padding:10px;background:var(--paper);border-top:1px solid var(--line)}
+.bar a{padding:14px;text-align:center;font-weight:700;font-size:.9rem;border:1px solid var(--ink)}
+.bar a:first-child{flex:1;background:var(--ink);color:#fff}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
-<body class="bg-espresso text-cream font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-bronze selection:text-espresso relative">
-
-    <!-- Top Contact Strip -->
-    <div class="bg-espresso-surface border-b border-gold-subtle py-2.5 px-4 text-xs font-mono tracking-wider text-cream-muted relative z-30">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center space-x-6">
-                <a href="https://www.google.com/maps/search/?api=1&query=%CE%98%CE%B5%CE%BF%CE%B4%CE%BF%CF%83%CE%AF%CE%B4%CE%B7%CF%82+%CE%A7%CE%B1%CF%81%CE%AC%CE%BB%CE%B1%CE%BC%CF%80%CE%BF%CF%82+%CE%9F%CE%B4%CE%BD%CF%84%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+%CE%91%CE%B3%CE%AF%CE%BF%CF%85+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85+3+%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7" 
-                   target="_blank" rel="noopener noreferrer" class="flex items-center text-bronze hover:text-bronze-light transition-colors">
-                    <svg class="w-3.5 h-3.5 fill-current mr-2 shrink-0" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    Αγίου Γεωργίου 3, Θεσσαλονίκη 546 35 (Πλησίον Ροτόντας)
-                </a>
-                <span class="hidden lg:inline text-espresso-border">|</span>
-                <span class="hidden lg:inline text-cream-dark">
-                    Ραντεβού Κατόπιν Τηλεφωνικής Επικοινωνίας
-                </span>
-            </div>
-            <div class="flex items-center space-x-6">
-                <a href="tel:2310219927" class="text-bronze font-mono hover:text-gold transition-colors font-bold tracking-widest flex items-center">
-                    <svg class="w-3.5 h-3.5 mr-1.5 stroke-current fill-none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    231 021 9927
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sticky Main Navigation Header -->
-    <header class="sticky top-0 z-40 glass-editorial border-b border-gold-subtle">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between py-4">
-            
-            <!-- Branding with SVG Tooth Emblem -->
-            <a href="#" class="group flex items-center space-x-3.5">
-                <!-- Polished Golden SVG Tooth Logo -->
-                <div class="w-10 h-10 rounded-full border border-gold-subtle bg-espresso/80 flex items-center justify-center p-2 group-hover:border-bronze transition-all duration-300 shadow-md">
-                    <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="headerGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#D8C3A5" />
-                                <stop offset="50%" stop-color="#C5A880" />
-                                <stop offset="100%" stop-color="#9A7D56" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M50 12C38 12 28 18 25 30C22 42 26 58 32 72C35 78 38 88 43 88C47 88 48 80 50 74C52 80 53 88 57 88C62 88 65 78 68 72C74 58 78 42 75 30C72 18 62 12 50 12ZM42 55C38 55 35 50 35 44C35 38 40 35 45 35C48 35 50 38 50 42C50 48 46 55 42 55Z" 
-                              fill="url(#headerGoldGrad)"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-serif text-2xl md:text-3xl font-normal tracking-wider text-cream group-hover:text-bronze transition-colors">
-                        ΘΕΟΔΟΣΙΔΗΣ
-                    </span>
-                    <span class="font-mono text-[9px] tracking-[0.3em] text-bronze uppercase -mt-0.5">
-                        Χειρουργος Οδοντιατρος
-                    </span>
-                </div>
-            </a>
-
-            <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center space-x-8 font-sans text-xs uppercase tracking-[0.2em] text-cream-muted">
-                <a href="#philosophy" class="btn-luxury-line py-1.5 hover:text-bronze transition-colors">Φιλοσοφια</a>
-                <a href="#doctor" class="btn-luxury-line py-1.5 hover:text-bronze transition-colors">Ο Ιατρος</a>
-                <a href="#services" class="btn-luxury-line py-1.5 hover:text-bronze transition-colors">Υπηρεσιες</a>
-                <a href="#gallery" class="btn-luxury-line py-1.5 hover:text-bronze transition-colors">Εξοπλισμος</a>
-                <a href="#consultant" class="btn-luxury-line py-1.5 hover:text-bronze transition-colors">Συμβουλος</a>
-                <a href="#reviews" class="btn-luxury-line py-1.5 hover:text-bronze transition-colors">Αξιολογησεις</a>
-                <a href="#location" class="btn-luxury-line py-1.5 hover:text-bronze transition-colors">Τοποθεσια</a>
-            </nav>
-
-            <!-- Direct Call Action Button with Pulsing Ring -->
-            <div class="hidden sm:flex items-center space-x-4">
-                <a href="tel:2310219927" class="pulse-phone-ring px-6 py-2.5 text-xs font-mono uppercase tracking-widest text-espresso bg-bronze hover:bg-bronze-light hover:text-espresso transition-all duration-300 font-bold border border-bronze">
-                    Τηλ. 231 021 9927
-                </a>
-            </div>
-
-            <!-- Mobile Drawer Toggle Button -->
-            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-cream p-2 focus:outline-none" aria-label="Άνοιγμα Μενού">
-                <svg id="menuIcon" class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobileDrawer" class="hidden md:hidden bg-espresso-surface border-b border-gold-subtle px-6 py-6 space-y-4 font-mono text-xs uppercase tracking-widest">
-            <a href="#philosophy" onclick="toggleMobileMenu()" class="block text-cream-muted hover:text-bronze py-1.5">01. Φιλοσοφία</a>
-            <a href="#doctor" onclick="toggleMobileMenu()" class="block text-cream-muted hover:text-bronze py-1.5">02. Ο Ιατρός</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="block text-cream-muted hover:text-bronze py-1.5">03. Υπηρεσίες</a>
-            <a href="#gallery" onclick="toggleMobileMenu()" class="block text-cream-muted hover:text-bronze py-1.5">04. Εξοπλισμός &amp; Ακρίβεια</a>
-            <a href="#consultant" onclick="toggleMobileMenu()" class="block text-cream-muted hover:text-bronze py-1.5">05. Σύμβουλος Θεραπείας</a>
-            <a href="#reviews" onclick="toggleMobileMenu()" class="block text-cream-muted hover:text-bronze py-1.5">06. Αξιολογήσεις</a>
-            <a href="#location" onclick="toggleMobileMenu()" class="block text-cream-muted hover:text-bronze py-1.5">07. Τοποθεσία &amp; Οδηγίες</a>
-            <div class="pt-4 border-t border-gold-subtle flex flex-col gap-3">
-                <a href="tel:2310219927" class="w-full text-center py-3.5 text-espresso bg-bronze font-bold uppercase tracking-wider">
-                    Άμεση Κλήση: 231 021 9927
-                </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=%CE%98%CE%B5%CE%BF%CE%B4%CE%BF%CF%83%CE%AF%CE%B4%CE%B7%CF%82+%CE%A7%CE%B1%CF%81%CE%AC%CE%BB%CE%B1%CE%BC%CF%80%CE%BF%CF%82+%CE%9F%CE%B4%CE%BD%CF%84%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+%CE%91%CE%B3%CE%AF%CE%BF%CF%85+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85+3+%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7" 
-                   target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="w-full text-center py-3.5 text-bronze border border-bronze uppercase tracking-wider">
-                    Οδηγίες Google Maps
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        <!-- HERO SECTION WITH EXCLUSIVELY MACRO CLOSE-UP SLIDER & CANVAS PARTICLES -->
-        <section class="relative bg-espresso bg-grid-bespoke pt-16 pb-24 md:pt-28 md:pb-36 overflow-hidden border-b border-gold-subtle min-h-[88vh] flex items-center">
-            
-            <!-- HTML5 Gold Particle Dust Canvas -->
-            <canvas id="goldDustCanvas" class="absolute inset-0 pointer-events-none z-10 opacity-60"></canvas>
-
-            <!-- Macro Close-Up Crossfade Background Slider (Strictly Instrument Macro & Ceramic Detail Shot) -->
-            <div class="absolute inset-0 z-0 overflow-hidden">
-                <!-- Macro Slide 1: Ceramic crowns and instruments -->
-                <div id="heroBg1" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 animate-zoom opacity-40"
-                     style="background-image: url('watermarked_img_10987615557839543724.jpg');"></div>
-                <!-- Macro Slide 2: Surgical steel instruments on dark marble tray -->
-                <div id="heroBg2" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 animate-zoom opacity-0"
-                     style="background-image: url('watermarked_img_906131806148004341.jpg');"></div>
-                <!-- Macro Slide 3: Precision hand-held dental probe -->
-                <div id="heroBg3" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 animate-zoom opacity-0"
-                     style="background-image: url('Gemini_Generated_Image_83pwps83pwps83pw.jpeg');"></div>
-
-                <!-- Dark Espresso Overlay Gradient for Optimum Contrast -->
-                <div class="absolute inset-0 bg-gradient-to-r from-espresso via-espresso/92 to-espresso/70"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-espresso/60"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Main Text Content -->
-                    <div class="lg:col-span-8 space-y-8 reveal-on-scroll">
-                        <div class="inline-flex items-center space-x-3 px-4 py-1.5 border border-gold-subtle bg-espresso-surface/90 backdrop-blur-md">
-                            <span class="w-2 h-2 rounded-full bg-bronze animate-pulse"></span>
-                            <span class="font-mono text-xs text-bronze uppercase tracking-widest">
-                                Εξειδικευμένο Οδοντιατρείο • Θεσσαλονίκη
-                            </span>
-                        </div>
-
-                        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-cream leading-[1.08] tracking-tight">
-                            Αρχιτεκτονική Χαμόγελου <br>
-                            <span class="italic font-light text-shimmer">&amp; Προηγμένη Χειρουργική.</span>
-                        </h1>
-
-                        <p class="text-base sm:text-lg text-cream-muted font-sans max-w-2xl leading-relaxed font-light">
-                            Συνδυάζοντας την επιστημονική αυστηρότητα της χειρουργικής στόματος με την αισθητική τελειότητα. Μια εξατομικευμένη, ανώδυνη οδοντιατρική εμπειρία στο ιστορικό κέντρο της Θεσσαλονίκης.
-                        </p>
-
-                        <!-- Hero Direct Call & Navigation Touchpoints -->
-                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                            <a href="tel:2310219927" class="pulse-phone-ring px-8 py-4 bg-bronze text-espresso font-mono text-xs uppercase tracking-[0.2em] font-bold hover:bg-bronze-light transition-all text-center flex items-center justify-center gap-2 shadow-2xl">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                                Τηλεφωνική Επικοινωνία
-                            </a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=%CE%98%CE%B5%CE%BF%CE%B4%CE%BF%CF%83%CE%AF%CE%B4%CE%B7%CF%82+%CE%A7%CE%B1%CF%81%CE%AC%CE%BB%CE%B1%CE%BC%CF%80%CE%BF%CF%82+%CE%9F%CE%B4%CE%BD%CF%84%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+%CE%91%CE%B3%CE%AF%CE%BF%CF%85+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85+3+%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7" 
-                               target="_blank" rel="noopener noreferrer" 
-                               class="px-8 py-4 bg-espresso/60 backdrop-blur-md border border-gold-subtle text-cream hover:border-bronze hover:text-bronze font-mono text-xs uppercase tracking-[0.2em] transition-all text-center flex items-center justify-center gap-2">
-                                <svg class="w-4 h-4 fill-current text-bronze" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                Οδηγίες Πλοήγησης
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Editorial Floating Feature Box with SVG Tooth Icon -->
-                    <div class="lg:col-span-4 reveal-on-scroll">
-                        <div class="tilt-card bg-espresso-surface/85 backdrop-blur-md border border-gold-subtle p-8 relative space-y-6 shadow-2xl">
-                            <div class="absolute -top-3 -right-3 w-8 h-8 border-t border-r border-bronze pointer-events-none"></div>
-                            <div class="absolute -bottom-3 -left-3 w-8 h-8 border-b border-l border-bronze pointer-events-none"></div>
-
-                            <div class="flex items-center justify-between">
-                                <span class="font-mono text-xs text-bronze uppercase tracking-widest block">
-                                    // Πρότυπη Φροντίδα
-                                </span>
-                                <!-- Golden SVG Emblem -->
-                                <div class="w-8 h-8">
-                                    <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-                                        <path d="M50 12C38 12 28 18 25 30C22 42 26 58 32 72C35 78 38 88 43 88C47 88 48 80 50 74C52 80 53 88 57 88C62 88 65 78 68 72C74 58 78 42 75 30C72 18 62 12 50 12Z" 
-                                              fill="url(#headerGoldGrad)" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <div class="space-y-5">
-                                <div class="border-b border-gold-subtle pb-4">
-                                    <span class="text-2xl font-serif text-cream block">Εξατομικευμένη Φροντίδα</span>
-                                    <span class="text-xs text-cream-muted leading-relaxed block mt-1">Θεραπευτικό πλάνο προσαρμοσμένο αποκλειστικά στις ανατομικές σας ανάγκες.</span>
-                                </div>
-
-                                <div class="border-b border-gold-subtle pb-4">
-                                    <span class="text-2xl font-serif text-cream block">Σύγχρονη Χειρουργική</span>
-                                    <span class="text-xs text-cream-muted leading-relaxed block mt-1">Ελάχιστα επεμβατικές τεχνικές για ταχεία και ανώδυνη αποκατάσταση.</span>
-                                </div>
-
-                                <div>
-                                    <span class="text-2xl font-serif text-cream block">3D Digital Design</span>
-                                    <span class="text-xs text-cream-muted leading-relaxed block mt-1">Ψηφιακός σχεδιασμός χαμόγελου με ακρίβεια χιλιοστού.</span>
-                                </div>
-                            </div>
-
-                            <div class="pt-2 text-[11px] font-mono text-bronze flex items-center justify-between border-t border-gold-subtle">
-                                <span>ΑΓΙΟΥ ΓΕΩΡΓΙΟΥ 3</span>
-                                <span>ΘΕΣΣΑΛΟΝΙΚΗ</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- PHILOSOPHY & DOCTOR SECTION -->
-        <section id="philosophy" class="py-24 bg-espresso-surface border-b border-gold-subtle relative">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                    
-                    <!-- Left Editorial Image (Macro Photo of Precision Instruments & Ceramic Artistry) -->
-                    <div class="lg:col-span-5 relative reveal-on-scroll">
-                        <div class="tilt-card aspect-[4/5] bg-espresso border border-gold-subtle p-3 relative flex flex-col justify-between overflow-hidden group shadow-2xl">
-                            <div class="w-full h-full bg-cover bg-center border border-gold-subtle relative flex items-center justify-center p-8 text-center transition-transform duration-700 group-hover:scale-105"
-                                 style="background-image: url('watermarked_img_10987615557839543724.jpg');">
-                                <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/80 to-transparent"></div>
-                                
-                                <div class="relative z-10 space-y-4">
-                                    <div class="w-16 h-16 mx-auto rounded-full border border-bronze/50 bg-espresso/80 backdrop-blur-sm flex items-center justify-center p-3 shadow-lg">
-                                        <!-- Tooth Emblem -->
-                                        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-                                            <path d="M50 12C38 12 28 18 25 30C22 42 26 58 32 72C35 78 38 88 43 88C47 88 48 80 50 74C52 80 53 88 57 88C62 88 65 78 68 72C74 58 78 42 75 30C72 18 62 12 50 12Z" fill="url(#headerGoldGrad)" />
-                                        </svg>
-                                    </div>
-                                    <span class="font-serif italic text-2xl text-cream block">Χαράλαμπος Θεοδοσίδης</span>
-                                    <span class="font-mono text-xs uppercase tracking-widest text-bronze block">Χειρουργός Οδοντίατρος</span>
-                                </div>
-                            </div>
-                            <div class="mt-3 pt-2 border-t border-gold-subtle flex justify-between items-center text-[11px] font-mono text-cream-muted bg-espresso/90 px-3 py-1.5">
-                                <span>ΘΕΣΣΑΛΟΝΙΚΗ</span>
-                                <span>CLINICAL PRECISION</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Doctor Profile Content -->
-                    <div class="lg:col-span-7 space-y-8 reveal-on-scroll" id="doctor">
-                        <div class="space-y-3">
-                            <span class="font-mono text-xs text-bronze uppercase tracking-[0.25em]">01 // Φιλοσοφία &amp; Ιατρός</span>
-                            <h2 class="font-serif text-3xl sm:text-5xl text-cream font-normal leading-tight">
-                                Η δέσμευσή μας για την υγεία &amp; την αισθητική του στόματός σας.
-                            </h2>
-                        </div>
-
-                        <div class="space-y-6 text-cream-muted font-sans font-light leading-relaxed text-base sm:text-lg">
-                            <p>
-                                Ο <strong class="text-cream font-normal">Χαράλαμπος Θεοδοσίδης</strong> ασκεί τη χειρουργική και αισθητική οδοντιατρική με γνώμονα τη μέγιστη επιστημονική ακρίβεια, τον σεβασμό στον ασθενή και την απόλυτη άνεση κατά τη διάρκεια κάθε θεραπείας.
-                            </p>
-                            <p>
-                                Στο ιατρείο μας στην Αγίου Γεωργίου 3, στο κέντρο της Θεσσαλονίκης, κάθε περιστατικό αντιμετωπίζεται ως μοναδικό. Πιστεύουμε ότι ένα υγιές και όμορφο χαμόγελο είναι προϊόν προσεκτικού σχεδιασμού, ανώδυνων πρωτοκόλλων και ειλικρινούς επικοινωνίας.
-                            </p>
-                        </div>
-
-                        <!-- Core Pillars -->
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-gold-subtle">
-                            <div class="space-y-2">
-                                <span class="font-mono text-xs text-bronze block">01. ΑΝΩΔΥΝΗ ΠΡΟΣΕΓΓΙΣΗ</span>
-                                <p class="text-xs text-cream-muted leading-relaxed">
-                                    Σύγχρονες τεχνικές αναισθησίας και ήπιοι χειρουργικοί χειρισμοί.
-                                </p>
-                            </div>
-                            <div class="space-y-2">
-                                <span class="font-mono text-xs text-bronze block">02. ΑΡΧΙΤΕΚΤΟΝΙΚΗ ΑΙΣΘΗΤΙΚΗ</span>
-                                <p class="text-xs text-cream-muted leading-relaxed">
-                                    Σχεδιασμός που σέβεται τα φυσικά ανατομικά χαρακτηριστικά σας.
-                                </p>
-                            </div>
-                            <div class="space-y-2">
-                                <span class="font-mono text-xs text-bronze block">03. ΑΥΣΤΗΡΗ ΑΠΟΣΤΕΙΡΩΣΗ</span>
-                                <p class="text-xs text-cream-muted leading-relaxed">
-                                    Πρότυπα πρωτόκολλα υγιεινής και απολύμανσης τελευταίας γενιάς.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICES SECTION WITH 3D TILT CARDS -->
-        <section id="services" class="py-24 bg-espresso border-b border-gold-subtle">
-            <div class="max-w-7xl mx-auto px-6 space-y-16">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
-                    <div class="space-y-3 max-w-2xl">
-                        <span class="font-mono text-xs text-bronze uppercase tracking-[0.25em]">02 // Υπηρεσίες Υψηλής Ακρίβειας</span>
-                        <h2 class="font-serif text-3xl sm:text-5xl text-cream font-normal">
-                            Εξειδικευμένες Οδοντιατρικές Θεραπείες
-                        </h2>
-                    </div>
-                    <p class="text-xs font-mono text-cream-muted max-w-xs leading-relaxed">
-                        Επιλέξτε οποιαδήποτε θεραπεία για να ανακαλύψετε τις αναλυτικές πληροφορίες.
-                    </p>
-                </div>
-
-                <!-- Services Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Service 1 -->
-                    <div onclick="openServiceDetail('implants')" class="tilt-card reveal-on-scroll group bg-espresso-surface border border-gold-subtle p-8 hover:border-bronze transition-all cursor-pointer relative flex flex-col justify-between min-h-[310px] shadow-xl">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="font-mono text-xs text-bronze">01 / SURGERY</span>
-                                <span class="w-8 h-8 rounded-full border border-gold-subtle flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">→</span>
-                            </div>
-                            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-bronze transition-colors">
-                                Χειρουργική Στόματος &amp; Εμφυτεύματα
-                            </h3>
-                            <p class="text-xs text-cream-muted font-sans leading-relaxed">
-                                Τοποθέτηση οδοντικών εμφυτευμάτων τελευταίας γενιάς, εξαγωγές εγκλείστων φρονιμιτών και οστική ανάπλαση με απόλυτη ασφάλεια.
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-gold-subtle flex items-center justify-between text-[11px] font-mono text-bronze">
-                            <span>ΑΝΑΛΥΤΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span>
-                            <span>[+]</span>
-                        </div>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div onclick="openServiceDetail('aesthetics')" class="tilt-card reveal-on-scroll group bg-espresso-surface border border-gold-subtle p-8 hover:border-bronze transition-all cursor-pointer relative flex flex-col justify-between min-h-[310px] shadow-xl">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="font-mono text-xs text-bronze">02 / AESTHETICS</span>
-                                <span class="w-8 h-8 rounded-full border border-gold-subtle flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">→</span>
-                            </div>
-                            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-bronze transition-colors">
-                                Αισθητική Οδοντιατρική &amp; Όψεις
-                            </h3>
-                            <p class="text-xs text-cream-muted font-sans leading-relaxed">
-                                Όψεις πορσελάνης και ρητίνης για την αποκατάσταση της μορφής, του χρώματος και της συμμετρίας του χαμόγελου.
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-gold-subtle flex items-center justify-between text-[11px] font-mono text-bronze">
-                            <span>ΑΝΑΛΥΤΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span>
-                            <span>[+]</span>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div onclick="openServiceDetail('perio')" class="tilt-card reveal-on-scroll group bg-espresso-surface border border-gold-subtle p-8 hover:border-bronze transition-all cursor-pointer relative flex flex-col justify-between min-h-[310px] shadow-xl">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="font-mono text-xs text-bronze">03 / PERIODONTICS</span>
-                                <span class="w-8 h-8 rounded-full border border-gold-subtle flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">→</span>
-                            </div>
-                            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-bronze transition-colors">
-                                Θεραπεία Περιοδοντίου &amp; Ούλων
-                            </h3>
-                            <p class="text-xs text-cream-muted font-sans leading-relaxed">
-                                Αντιμετώπισή ουλίτιδας και περιοδοντίτιδας, αναγεννητικές τεχνικές και διατήρηση της υγείας των περιοδοντικών ιστών.
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-gold-subtle flex items-center justify-between text-[11px] font-mono text-bronze">
-                            <span>ΑΝΑΛΥΤΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span>
-                            <span>[+]</span>
-                        </div>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div onclick="openServiceDetail('endo')" class="tilt-card reveal-on-scroll group bg-espresso-surface border border-gold-subtle p-8 hover:border-bronze transition-all cursor-pointer relative flex flex-col justify-between min-h-[310px] shadow-xl">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="font-mono text-xs text-bronze">04 / ENDODONTICS</span>
-                                <span class="w-8 h-8 rounded-full border border-gold-subtle flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">→</span>
-                            </div>
-                            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-bronze transition-colors">
-                                Ενδοδοντική Θεραπεία (Απονεύρωση)
-                            </h3>
-                            <p class="text-xs text-cream-muted font-sans leading-relaxed">
-                                Μικροσκοπικά ακριβής καθαρισμός και σφράγιση ριζικών σωλήνων για τη διάσωση φυσικών δοντιών από φλεγμονές.
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-gold-subtle flex items-center justify-between text-[11px] font-mono text-bronze">
-                            <span>ΑΝΑΛΥΤΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span>
-                            <span>[+]</span>
-                        </div>
-                    </div>
-
-                    <!-- Service 5 -->
-                    <div onclick="openServiceDetail('whitening')" class="tilt-card reveal-on-scroll group bg-espresso-surface border border-gold-subtle p-8 hover:border-bronze transition-all cursor-pointer relative flex flex-col justify-between min-h-[310px] shadow-xl">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="font-mono text-xs text-bronze">05 / BLEACHING &amp; DSD</span>
-                                <span class="w-8 h-8 rounded-full border border-gold-subtle flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">→</span>
-                            </div>
-                            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-bronze transition-colors">
-                                Λεύκανση &amp; Ψηφιακός Σχεδιασμός
-                            </h3>
-                            <p class="text-xs text-cream-muted font-sans leading-relaxed">
-                                Επαγγελματική λεύκανση στο ιατρείο ή στο σπίτι με ασφαλή υλικά, συνδυασμένη με Digital Smile Design.
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-gold-subtle flex items-center justify-between text-[11px] font-mono text-bronze">
-                            <span>ΑΝΑΛΥΤΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span>
-                            <span>[+]</span>
-                        </div>
-                    </div>
-
-                    <!-- Service 6 -->
-                    <div onclick="openServiceDetail('prevention')" class="tilt-card reveal-on-scroll group bg-espresso-surface border border-gold-subtle p-8 hover:border-bronze transition-all cursor-pointer relative flex flex-col justify-between min-h-[310px] shadow-xl">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="font-mono text-xs text-bronze">06 / PREVENTIVE CARE</span>
-                                <span class="w-8 h-8 rounded-full border border-gold-subtle flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">→</span>
-                            </div>
-                            <h3 class="font-serif text-2xl text-cream mb-3 group-hover:text-bronze transition-colors">
-                                Γενική &amp; Προληπτική Οδοντιατρική
-                            </h3>
-                            <p class="text-xs text-cream-muted font-sans leading-relaxed">
-                                Καθαρισμός, αφαίρεση τρυγίας, εμφράξεις ρητίνης (σφραγίσματα υψηλής αισθητικής) και τακτικός στοματολογικός έλεγχος.
-                            </p>
-                        </div>
-                        <div class="pt-6 border-t border-gold-subtle flex items-center justify-between text-[11px] font-mono text-bronze">
-                            <span>ΑΝΑΛΥΤΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span>
-                            <span>[+]</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- MACRO PRECISION & INSTRUMENT GALLERY SECTION (STRICTLY MACRO CLOSE-UPS ONLY) -->
-        <section id="gallery" class="py-24 bg-espresso-surface border-b border-gold-subtle">
-            <div class="max-w-7xl mx-auto px-6 space-y-16">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
-                    <div class="space-y-3">
-                        <span class="font-mono text-xs text-bronze uppercase tracking-[0.25em]">03 // Ακρίβεια &amp; Τεχνολογία</span>
-                        <h2 class="font-serif text-3xl sm:text-5xl text-cream font-normal">
-                            Επιστημονικός Εξοπλισμός &amp; Λεπτομέρεια
-                        </h2>
-                    </div>
-                    <p class="text-xs font-mono text-cream-muted max-w-sm leading-relaxed">
-                        Κοντινά πλάνα των εργαλείων χειρουργικής ακρίβειας και των κεραμικών υλικών υψηλής αισθητικής.
-                    </p>
-                </div>
-
-                <!-- Gallery Grid of Close-ups -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Gallery Item 1 -->
-                    <div onclick="openLightbox('watermarked_img_10987615557839543724.jpg', 'Κεραμικές Όψεις &amp; Εργαλεία Ακρίβειας')" 
-                         class="tilt-card reveal-on-scroll group relative bg-espresso border border-gold-subtle overflow-hidden cursor-pointer shadow-2xl aspect-[4/3]">
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                             style="background-image: url('watermarked_img_10987615557839543724.jpg');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
-                            <div>
-                                <span class="font-mono text-[10px] text-bronze uppercase block">MACRO DETAIL 01</span>
-                                <h3 class="font-serif text-lg text-cream">Κεραμικές Όψεις &amp; Υλικά</h3>
-                            </div>
-                            <span class="w-8 h-8 rounded-full border border-gold-subtle bg-espresso/80 flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">🔍</span>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 2 -->
-                    <div onclick="openLightbox('watermarked_img_906131806148004341.jpg', 'Χειρουργικός Εξοπλισμός Ατσαλιού')" 
-                         class="tilt-card reveal-on-scroll group relative bg-espresso border border-gold-subtle overflow-hidden cursor-pointer shadow-2xl aspect-[4/3]">
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                             style="background-image: url('watermarked_img_906131806148004341.jpg');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
-                            <div>
-                                <span class="font-mono text-[10px] text-bronze uppercase block">MACRO DETAIL 02</span>
-                                <h3 class="font-serif text-lg text-cream">Χειρουργικά Εργαλεία Steel</h3>
-                            </div>
-                            <span class="w-8 h-8 rounded-full border border-gold-subtle bg-espresso/80 flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">🔍</span>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 3 -->
-                    <div onclick="openLightbox('Gemini_Generated_Image_83pwps83pwps83pw.jpeg', 'Εργαλείο Ψηλαφητήρα &amp; Μικρο-οπτικά')" 
-                         class="tilt-card reveal-on-scroll group relative bg-espresso border border-gold-subtle overflow-hidden cursor-pointer shadow-2xl aspect-[4/3]">
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                             style="background-image: url('Gemini_Generated_Image_83pwps83pwps83pw.jpeg');"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
-                            <div>
-                                <span class="font-mono text-[10px] text-bronze uppercase block">MACRO DETAIL 03</span>
-                                <h3 class="font-serif text-lg text-cream">Διαγνωστική Ακρίβεια</h3>
-                            </div>
-                            <span class="w-8 h-8 rounded-full border border-gold-subtle bg-espresso/80 flex items-center justify-center text-bronze group-hover:bg-bronze group-hover:text-espresso transition-all">🔍</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- DIGITAL TREATMENT CONSULTANT WIDGET -->
-        <section id="consultant" class="py-24 bg-espresso border-b border-gold-subtle relative">
-            <div class="max-w-5xl mx-auto px-6">
-                
-                <div class="text-center space-y-4 mb-12 reveal-on-scroll">
-                    <span class="font-mono text-xs text-bronze uppercase tracking-[0.25em]">04 // Ψηφιακός Σύμβουλος</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl text-cream font-normal">
-                        Βρείτε την κατάλληλη θεραπευτική οδό
-                    </h2>
-                    <p class="text-xs font-mono text-cream-muted max-w-xl mx-auto">
-                        Επιλέξτε το κύριο μέλημά σας για να λάβετε μια αρχική εκτίμηση θεραπευτικής προσέγγισης.
-                    </p>
-                </div>
-
-                <div class="bg-espresso-surface border border-gold-subtle p-6 md:p-10 relative shadow-2xl reveal-on-scroll">
-                    
-                    <div id="consultantStep1" class="space-y-8">
-                        <label class="block font-serif text-xl text-cream">
-                            Ποιο είναι το κύριο αίτημα της επίσκεψής σας;
-                        </label>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <button onclick="selectConsultantOption('aesthetics')" class="p-5 text-left border border-gold-subtle hover:border-bronze bg-espresso transition-all group">
-                                <div class="font-mono text-xs text-bronze mb-1">01. ΑΙΣΘΗΤΙΚΗ &amp; ΧΑΜΟΓΕΛΟ</div>
-                                <div class="font-sans text-sm text-cream font-medium group-hover:text-bronze transition-colors">Θέλω να βελτιώσω το χρώμα, το σχήμα ή τα κενά στα δόντια μου.</div>
-                            </button>
-
-                            <button onclick="selectConsultantOption('missing')" class="p-5 text-left border border-gold-subtle hover:border-bronze bg-espresso transition-all group">
-                                <div class="font-mono text-xs text-bronze mb-1">02. ΑΝΤΙΚΑΤΑΣΤΑΣΗ ΔΟΝΤΙΩΝ</div>
-                                <div class="font-sans text-sm text-cream font-medium group-hover:text-bronze transition-colors">Έχω ένα ή περισσότερα ελλείποντα δόντια (Εμφυτεύματα).</div>
-                            </button>
-
-                            <button onclick="selectConsultantOption('pain')" class="p-5 text-left border border-gold-subtle hover:border-bronze bg-espresso transition-all group">
-                                <div class="font-mono text-xs text-bronze mb-1">03. ΕΠΕΙΓΟΝ / ΠΟΝΟΣ</div>
-                                <div class="font-sans text-sm text-cream font-medium group-hover:text-bronze transition-colors">Έχω έντονη ενόχληση, ευαισθησία ή σπασμένο δόντι.</div>
-                            </button>
-
-                            <button onclick="selectConsultantOption('checkup')" class="p-5 text-left border border-gold-subtle hover:border-bronze bg-espresso transition-all group">
-                                <div class="font-mono text-xs text-bronze mb-1">04. ΓΕΝΙΚΟΣ ΕΛΕΓΧΟΣ &amp; ΚΑΘΑΡΙΣΜΟΣ</div>
-                                <div class="font-sans text-sm text-cream font-medium group-hover:text-bronze transition-colors">Επιθυμώ προληπτικό έλεγχο, καθαρισμό ή αισθητικό σφράγισμα.</div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="consultantResult" class="hidden space-y-6">
-                        <div class="flex items-center justify-between border-b border-gold-subtle pb-4">
-                            <span class="font-mono text-xs text-bronze uppercase tracking-widest">// Προτεινομενο Πλανο Προσεγγισης</span>
-                            <button onclick="resetConsultant()" class="text-xs font-mono text-cream-muted underline hover:text-bronze">
-                                ← Αλλαγή επιλογής
-                            </button>
-                        </div>
-
-                        <div class="space-y-4">
-                            <h3 id="consultantTitle" class="font-serif text-3xl text-cream"></h3>
-                            <p id="consultantDesc" class="text-sm text-cream-muted font-sans leading-relaxed"></p>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-gold-subtle">
-                                <div class="bg-espresso p-4 border border-gold-subtle">
-                                    <span class="block font-mono text-[10px] text-bronze uppercase">Εκτιμώμενες Επισκέψεις</span>
-                                    <span id="consultantVisits" class="font-serif text-xl text-cream mt-1 block"></span>
-                                </div>
-                                <div class="bg-espresso p-4 border border-gold-subtle">
-                                    <span class="block font-mono text-[10px] text-bronze uppercase">Πρώτο Βήμα</span>
-                                    <span id="consultantFirstStep" class="font-serif text-xl text-cream mt-1 block"></span>
-                                </div>
-                                <div class="bg-espresso p-4 border border-gold-subtle">
-                                    <span class="block font-mono text-[10px] text-bronze uppercase">Επίπεδο Άνεσης</span>
-                                    <span class="font-serif text-xl text-cream mt-1 block">100% Ανώδυνο</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-6 flex flex-col sm:flex-row gap-4">
-                            <a href="tel:2310219927" class="pulse-phone-ring px-8 py-3.5 bg-bronze text-espresso font-mono text-xs uppercase tracking-widest font-bold hover:bg-bronze-light transition-all text-center">
-                                Τηλεφωνική Συνεννόηση: 231 021 9927
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- AUTHENTIC TESTIMONIALS SECTION (STRICTLY NO NUMERIC SCORES OR STAR ICONS) -->
-        <section id="reviews" class="py-24 bg-espresso-surface border-b border-gold-subtle">
-            <div class="max-w-7xl mx-auto px-6 space-y-16">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
-                    <div class="space-y-3">
-                        <span class="font-mono text-xs text-bronze uppercase tracking-[0.25em]">05 // Αυθεντικές Αξιολογήσεις</span>
-                        <h2 class="font-serif text-3xl sm:text-5xl text-cream font-normal">
-                            Λόγια Ασθενών
-                        </h2>
-                    </div>
-                    
-                    <p class="text-xs font-mono text-cream-muted max-w-sm">
-                        Διαβάστε αυτούσιες εμπειρίες ασθενών που μας εμπιστεύτηκαν το χαμόγελό τους.
-                    </p>
-                </div>
-
-                <!-- Testimonials Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Quote 1 -->
-                    <div class="tilt-card reveal-on-scroll bg-espresso border border-gold-subtle p-8 flex flex-col justify-between space-y-6 relative shadow-xl">
-                        <div class="space-y-4">
-                            <svg class="w-8 h-8 text-bronze opacity-40 fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                            <p class="font-serif text-xl italic text-cream leading-relaxed">
-                                «Δεν υπάρχουν λόγια για την εξαιρετική εξυπηρέτηση και την μοναδική αγάπη για το έργο αυτού του Ανθρώπου!»
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-gold-subtle flex justify-between items-center">
-                            <span class="font-sans font-medium text-sm text-bronze">Plumbum 82</span>
-                            <span class="font-mono text-[10px] text-cream-muted">Google Maps Review</span>
-                        </div>
-                    </div>
-
-                    <!-- Quote 2 -->
-                    <div class="tilt-card reveal-on-scroll bg-espresso border border-gold-subtle p-8 flex flex-col justify-between space-y-6 relative shadow-xl">
-                        <div class="space-y-4">
-                            <svg class="w-8 h-8 text-bronze opacity-40 fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                            <p class="font-serif text-xl italic text-cream leading-relaxed">
-                                «Εξαιρετικός επιστήμονας, υπομονετικός και με απόλυτη έμφαση στη λεπτομέρεια. Η θεραπεία ήταν εντελώς ανώδυνη.»
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-gold-subtle flex justify-between items-center">
-                            <span class="font-sans font-medium text-sm text-bronze">Μαριάννα Ρηγούλη</span>
-                            <span class="font-mono text-[10px] text-cream-muted">Google Maps Review</span>
-                        </div>
-                    </div>
-
-                    <!-- Quote 3 -->
-                    <div class="tilt-card reveal-on-scroll bg-espresso border border-gold-subtle p-8 flex flex-col justify-between space-y-6 relative shadow-xl">
-                        <div class="space-y-4">
-                            <svg class="w-8 h-8 text-bronze opacity-40 fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                            <p class="font-serif text-xl italic text-cream leading-relaxed">
-                                «Άμεση εξυπηρέτηση σε επείγον περιστατικό. Άψογος επαγγελματίας και καθαρός χώρος στην Αγίου Γεωργίου.»
-                            </p>
-                        </div>
-                        <div class="pt-4 border-t border-gold-subtle flex justify-between items-center">
-                            <span class="font-sans font-medium text-sm text-bronze">maria a</span>
-                            <span class="font-mono text-[10px] text-cream-muted">Google Maps Review</span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Direct Link Button to Live Google Maps Reviews -->
-                <div class="pt-6 flex justify-center reveal-on-scroll">
-                    <a href="https://www.google.com/maps/search/?api=1&query=%CE%98%CE%B5%CE%BF%CE%B4%CE%BF%CF%83%CE%AF%CE%B4%CE%B7%CF%82+%CE%A7%CE%B1%CF%81%CE%AC%CE%BB%CE%B1%CE%BC%CF%80%CE%BF%CF%82+%CE%9F%CE%B4%CE%BD%CF%84%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+%CE%91%CE%B3%CE%AF%CE%BF%CF%85+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85+3+%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="inline-flex items-center space-x-3 px-8 py-4 bg-espresso border border-bronze hover:bg-bronze hover:text-espresso transition-all text-bronze font-mono text-xs uppercase tracking-[0.2em] shadow-xl">
-                        <span>Δείτε τις ζωντανές αξιολογήσεις στο Google Maps</span>
-                        <svg class="w-4 h-4 stroke-current fill-none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- LOCATION & DIRECT CONTACT SECTION -->
-        <section id="location" class="py-24 bg-espresso border-b border-gold-subtle">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                    
-                    <!-- Location Info Card -->
-                    <div class="lg:col-span-6 space-y-8 reveal-on-scroll">
-                        <div class="space-y-3">
-                            <span class="font-mono text-xs text-bronze uppercase tracking-[0.25em]">06 // Τοποθεσία &amp; Επικοινωνία</span>
-                            <h2 class="font-serif text-3xl sm:text-5xl text-cream font-normal">
-                                Στο Κέντρο της Θεσσαλονίκης
-                            </h2>
-                        </div>
-
-                        <p class="text-sm text-cream-muted font-sans leading-relaxed">
-                            Το οδοντιατρείο βρίσκεται σε κομβικό σημείο στο ιστορικό κέντρο της Θεσσαλονίκης, επί της οδού Αγίου Γεωργίου 3 (πλησίον Ροτόντας &amp; Εγνατίας). Η προσέλευση πραγματοποιείται κατόπιν τηλεφωνικής συνεννόησης.
-                        </p>
-
-                        <div class="space-y-6 font-sans text-sm text-cream-muted">
-                            <div class="flex items-start space-x-4 border-b border-gold-subtle pb-6">
-                                <div class="p-3 border border-gold-subtle text-bronze shrink-0 bg-espresso-surface">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                </div>
-                                <div>
-                                    <strong class="block text-cream font-medium text-base mb-1">Διεύθυνση Ιατρείου</strong>
-                                    <span>Αγίου Γεωργίου 3, Θεσσαλονίκη 546 35</span><br>
-                                    <span class="text-xs text-bronze font-mono">Πλησίον Ροτόντας • Plus Code: JXM2+9V</span>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4 border-b border-gold-subtle pb-6">
-                                <div class="p-3 border border-gold-subtle text-bronze shrink-0 bg-espresso-surface">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                                </div>
-                                <div>
-                                    <strong class="block text-cream font-medium text-base mb-1">Τηλέφωνο Επικοινωνίας &amp; Ραντεβού</strong>
-                                    <a href="tel:2310219927" class="text-bronze font-mono text-2xl font-bold hover:text-gold transition-colors block">231 021 9927</a>
-                                    <span class="text-xs text-cream-muted">Καλέστε μας για προγραμματισμό επίσκεψης.</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Direct Call CTA Card -->
-                        <div class="bg-espresso-surface border border-gold-subtle p-6 space-y-4 shadow-xl">
-                            <span class="font-mono text-xs text-bronze uppercase tracking-widest block">// Αμεση Τηλεφωνικη Επικοινωνια</span>
-                            <h3 class="font-serif text-xl text-cream">Προγραμματίστε την επίσκεψή σας</h3>
-                            <p class="text-xs text-cream-muted leading-relaxed">
-                                Για οποιαδήποτε απορία, επείγον περιστατικό ή προγραμματισμό ραντεβού, καλέστε απευθείας στη γραμματεία του ιατρείου.
-                            </p>
-                            <a href="tel:2310219927" class="pulse-phone-ring w-full py-4 bg-bronze text-espresso font-mono text-xs uppercase tracking-widest font-bold hover:bg-bronze-light transition-all text-center flex items-center justify-center gap-2">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                                Κληση στο 231 021 9927
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Embedded Interactive Google Map -->
-                    <div class="lg:col-span-6 h-[540px] bg-espresso-surface border border-gold-subtle relative p-2 space-y-2 flex flex-col shadow-2xl reveal-on-scroll">
-                        <iframe 
-                            title="Χάρτης Ιατρείου Θεοδοσίδης Χαράλαμπος"
-                            class="w-full flex-grow grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 border border-gold-subtle" 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.876123456789!2d22.952!3d40.632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8390000000000%3A0x0!2zzpHOs8_Or86_z4UgzpPOtc-Jz4HOs86vzr_PhSAzLCDOmM61z4PPg86xzrvOv869zq_Ous63IDU0NiAzNQ!5e0!3m2!1sel!2sgr!4v1600000000000!5m2!1sel!2sgr" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <a href="https://www.google.com/maps/search/?api=1&query=%CE%98%CE%B5%CE%BF%CE%B4%CE%BF%CF%83%CE%AF%CE%B4%CE%B7%CF%82+%CE%A7%CE%B1%CF%81%CE%AC%CE%BB%CE%B1%CE%BC%CF%80%CE%BF%CF%82+%CE%9F%CE%B4%CE%BD%CF%84%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+%CE%91%CE%B3%CE%AF%CE%BF%CF%85+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85+3+%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7" 
-                           target="_blank" rel="noopener noreferrer"
-                           class="w-full py-3 bg-espresso border border-gold-subtle text-bronze hover:text-cream hover:bg-bronze transition-all font-mono text-xs uppercase tracking-widest text-center block">
-                            Άνοιγμα στους Χάρτες Google →
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Floating Mobile Call Bar -->
-    <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 glass-editorial border-t border-gold-subtle p-3 flex gap-2">
-        <a href="tel:2310219927" class="pulse-phone-ring flex-1 py-3 bg-bronze text-espresso font-mono text-xs uppercase tracking-wider font-bold text-center flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            231 021 9927
-        </a>
-        <a href="https://www.google.com/maps/search/?api=1&query=%CE%98%CE%B5%CE%BF%CE%B4%CE%BF%CF%83%CE%AF%CE%B4%CE%B7%CF%82+%CE%A7%CE%B1%CF%81%CE%AC%CE%BB%CE%B1%CE%BC%CF%80%CE%BF%CF%82+%CE%9F%CE%B4%CE%BD%CF%84%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+%CE%91%CE%B3%CE%AF%CE%BF%CF%85+%CE%93%CE%B5%CF%89%CF%81%CE%B3%CE%AF%CE%BF%CF%85+3+%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7" 
-           target="_blank" rel="noopener noreferrer" class="px-4 py-3 border border-gold-subtle text-cream font-mono text-xs uppercase tracking-wider flex items-center justify-center">
-            <svg class="w-4 h-4 fill-current text-bronze" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        </a>
-    </div>
-
-    <!-- Editorial Footer -->
-    <footer class="bg-espresso-surface border-t border-gold-subtle py-12 px-6 font-mono text-xs text-cream-muted mb-16 sm:mb-0">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8">
-                    <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-                        <path d="M50 12C38 12 28 18 25 30C22 42 26 58 32 72C35 78 38 88 43 88C47 88 48 80 50 74C52 80 53 88 57 88C62 88 65 78 68 72C74 58 78 42 75 30C72 18 62 12 50 12Z" fill="url(#headerGoldGrad)" />
-                    </svg>
-                </div>
-                <div class="flex flex-col space-y-1">
-                    <span class="font-serif text-lg text-cream tracking-wider">ΘΕΟΔΟΣΙΔΗΣ ΧΑΡΑΛΑΜΠΟΣ</span>
-                    <span class="text-[10px] text-bronze uppercase tracking-widest">Χειρουργός Οδοντίατρος • Θεσσαλονίκη</span>
-                </div>
-            </div>
-
-            <div class="text-center md:text-right space-y-1 text-[11px]">
-                <p>© 2026 Θεοδοσίδης Χαράλαμπος. All Rights Reserved.</p>
-                <p class="text-cream-muted/60">Αγίου Γεωργίου 3, Θεσσαλονίκη 546 35 | Τηλ: 231 021 9927</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Service Detail Modal Popup -->
-    <div id="serviceModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 glass-editorial bg-espresso/90">
-        <div class="bg-espresso-surface border border-gold-subtle max-w-2xl w-full p-8 relative shadow-2xl space-y-6">
-            <button onclick="closeServiceModal()" class="absolute top-4 right-4 text-cream-muted hover:text-bronze font-mono text-xl" aria-label="Κλείσιμο">
-                ✕
-            </button>
-
-            <span id="serviceCategory" class="font-mono text-xs text-bronze uppercase tracking-widest block"></span>
-            <h3 id="serviceModalTitle" class="font-serif text-3xl text-cream"></h3>
-
-            <div class="space-y-4 text-sm text-cream-muted font-sans leading-relaxed">
-                <p id="serviceModalDesc1"></p>
-                <p id="serviceModalDesc2"></p>
-            </div>
-
-            <div class="bg-espresso p-4 border border-gold-subtle space-y-2">
-                <span class="font-mono text-xs text-bronze uppercase block">// Τι περιλαμβάνει η θεραπεία:</span>
-                <ul id="serviceModalList" class="text-xs text-cream-muted space-y-1 list-disc list-inside"></ul>
-            </div>
-
-            <div class="pt-4 border-t border-gold-subtle flex flex-col sm:flex-row justify-between items-center gap-4">
-                <a href="tel:2310219927" class="pulse-phone-ring w-full sm:w-auto px-6 py-3.5 bg-bronze text-espresso font-mono text-xs uppercase tracking-widest font-bold hover:bg-bronze-light transition-all text-center flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    Τηλεφωνηστε για αυτη την Υπηρεσια
-                </a>
-                <button onclick="closeServiceModal()" class="text-xs font-mono text-cream-muted hover:text-cream underline">
-                    Κλείσιμο παράθυρου
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Gallery Macro Lightbox Modal -->
-    <div id="lightboxModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 glass-editorial bg-espresso/95" onclick="closeLightbox()">
-        <div class="relative max-w-4xl w-full flex flex-col items-center space-y-4" onclick="event.stopPropagation()">
-            <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-cream hover:text-bronze font-mono text-2xl">✕ Κλείσιμο</button>
-            <div class="w-full max-h-[75vh] border border-gold-subtle overflow-hidden bg-espresso flex items-center justify-center">
-                <img id="lightboxImg" src="" alt="Macro Close-Up Detail" class="max-h-[75vh] w-auto object-contain">
-            </div>
-            <p id="lightboxCaption" class="font-serif text-xl text-cream text-center"></p>
-        </div>
-    </div>
-
-    <script>
-        // --- 1. Gold Dust Canvas Animation ---
-        (function initGoldDust() {
-            const canvas = document.getElementById('goldDustCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-
-            function resize() {
-                canvas.width = canvas.parentElement.offsetWidth;
-                canvas.height = canvas.parentElement.offsetHeight;
-            }
-            window.addEventListener('resize', resize);
-            resize();
-
-            for (let i = 0; i < 45; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 1.8 + 0.5,
-                    alpha: Math.random() * 0.6 + 0.2,
-                    speedY: - (Math.random() * 0.4 + 0.1),
-                    speedX: (Math.random() - 0.5) * 0.2
-                });
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => {
-                    p.y += p.speedY;
-                    p.x += p.speedX;
-                    if (p.y < 0) p.y = canvas.height;
-                    if (p.x < 0) p.x = canvas.width;
-                    if (p.x > canvas.width) p.x = 0;
-
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(197, 168, 128, ${p.alpha})`;
-                    ctx.fill();
-                });
-                requestAnimationFrame(animate);
-            }
-            animate();
-        })();
-
-        // --- 2. Scroll Reveal Observer ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
-                });
-            }, { threshold: 0.12 });
-
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-        });
-
-        // --- 3. Interactive 3D Card Tilt Effect ---
-        document.querySelectorAll('.tilt-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -6;
-                const rotateY = ((x - centerX) / centerX) * 6;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-            });
-        });
-
-        // --- 4. Service Detail Data & Modal Handler ---
-        const serviceData = {
-            implants: {
-                category: "01 / SURGERY & IMPLANTS",
-                title: "Χειρουργική Στόματος & Εμφυτεύματα",
-                desc1: "Τα οδοντικά εμφυτεύματα αποτελούν τη σύγχρονη, μόνιμη και πλέον φυσική λύση για την αντικατάσταση ελλειπόντων δοντιών. Με τη χρήση τιτανίου υψηλής βιοσυμβατότητας, αποκαθιστούμε πλήρως τη μασατική λειτουργία και την αισθητική του στόματος.",
-                desc2: "Η χειρουργική διαδικασία εκτελείται με απόλυτα ανώδυνα τοπικά πρωτόκολλα, ψηφιακό σχεδιασμό τοποθέτησης και ελάχιστα επεμβατικές τεχνικές για ταχεία επούλωση.",
-                list: [
-                    "Αντικατάσταση μονών ή πολλαπλών ελλειπόντων δοντιών",
-                    "Χειρουργική αφαίρεση εγκλείστων φρονιμιτών",
-                    "Οστική ανάπλαση (μοσχεύματα) & ανύψωση ιγμορείου",
-                    "Ψηφιακά καθοδηγούμενη τοποθέτηση εμφυτευμάτων"
-                ]
-            },
-            aesthetics: {
-                category: "02 / COSMETIC DENTISTRY",
-                title: "Αισθητική Οδοντιατρική & Όψεις Πορσελάνης",
-                desc1: "Οι όψεις πορσελάνης και ρητίνης επιτρέπουν τη διόρθωση ατελειών στο σχήμα, το μέγεθος, το χρώμα και τα διαστήματα μεταξύ των δοντιών, προσφέροντας ένα λαμπερό αλλά απόλυτα φυσικό αποτέλεσμα.",
-                desc2: "Κάθε όψη κατασκευάζεται εξατομικευμένα με βάση τις αναλογίες του προσώπου σας, διατηρώντας τη μέγιστη δυνατή ποσότητα φυσικής οδοντικής ουσίας.",
-                list: [
-                    "Όψεις Πορσελάνης (Porcelain Veneers)",
-                    "Όψεις Ρητίνης (Composite Veneers / Bonding)",
-                    "Αποκατάσταση σπασμένων ή δυσχρωμικών δοντιών",
-                    "Ανασχεδιασμός γραμμής χαμόγελου"
-                ]
-            },
-            perio: {
-                category: "03 / PERIODONTOLOGY",
-                title: "Θεραπεία Περιοδοντίου & Αναγέννηση",
-                desc1: "Η υγεία των ούλων και του υποκείμενου οστού είναι η βάση για κάθε διατηρήσιμο χαμόγελο. Η περιοδοντίτιδα είναι μια χρόνια φλεγμονή που αν δεν αντιμετωπιστεί οδηγεί σε κινητικότητα και απώλεια δοντιών.",
-                desc2: "Εφαρμόζουμε εξειδικευμένα θεραπευτικά πρωτόκολλα υποουλικής ριζικής απόξεσης και αναγεννητικών τεχνικών για την πλήρη σταθεροποίηση του περιοδοντίου.",
-                list: [
-                    "Θεραπεία ουλίτιδας & προχωρημένης περιοδοντίτιδας",
-                    "Υποουλικός καθαρισμός & ριζική απόξεση",
-                    "Περιοδοντική χειρουργική & μοσχεύματα ούλων",
-                    "Πρόγραμμα περιοδικής συντήρησης (Recalls)"
-                ]
-            },
-            endo: {
-                category: "04 / ENDODONTICS",
-                title: "Ενδοδοντική Θεραπεία (Απονεύρωση)",
-                desc1: "Η ενδοδοντική θεραπεία είναι απαραίτητη όταν ο πολφός (το νεύρο) του δοντιού φλεγμαίνει ή μολύνεται από βαθιά τερηδόνα ή τραύμα. Στόχος μας είναι η διάσωση του φυσικού σας δοντιού.",
-                desc2: "Με τη χρήση μηχανοκίνητων εργαλείων και ηλεκτρονικών εντοπιστών ακρορριζίου, η θεραπεία ολοκληρώνεται ανώδυνα και με υψηλότατα ποσοστά επιτυχίας.",
-                list: [
-                    "Πλήρης καθαρισμός και απολύμανση ριζικών σωλήνων",
-                    "Έμφραξη με βιοσυμβατά ενδοδοντικά υλικά",
-                    "Επαναληπτικές ενδοδοντικές θεραπείες (αναθεωρήσεις)",
-                    "Άμεση ανακούφιση από οξύ οδοντικό πόνο"
-                ]
-            },
-            whitening: {
-                category: "05 / BLEACHING & DSD",
-                title: "Λεύκανση & Digital Smile Design",
-                desc1: "Η λεύκανση δοντιών είναι η πιο ασφαλής και συντηρητική μέθοδος για την αναζωογόνηση του χαμόγελου. Χρησιμοποιούμε εγκεκριμένους παράγοντες λεύκανσης που δεν καταστρέφουν την αδαμαντίνη.",
-                desc2: "Συνδυάζεται με Ψηφιακό Σχεδιασμό Χαμόγελου (DSD) ώστε να προεπισκοπήσετε το τελικό αποτέλεσμα πριν ξεκινήσει η διαδικασία.",
-                list: [
-                    "Λεύκανση στο ιατρείο για άμεσα αποτελέσματα",
-                    "Εξατομικευμένοι νάρθηκες λεύκανσης για το σπίτι",
-                    "Συνδυαστικά πρωτόκολλα μέγιστης διάρκειας",
-                    "Ψηφιακή προσομοίωση αποτελέσματος"
-                ]
-            },
-            prevention: {
-                category: "06 / PREVENTIVE CARE",
-                title: "Γενική & Προληπτική Οδοντιατρική",
-                desc1: "Η πρόληψη αποτελεί τον πυρήνα της φιλοσοφίας μας. Ο τακτικός έλεγχος και ο επαγγελματικός καθαρισμός προλαμβάνουν σοβαρότερα προβλήματα πριν αυτά εκδηλωθούν.",
-                desc2: "Αποκαθιστούμε τερηδονισμένα δόντια με σφραγίσματα σύνθετης ρητίνης υψηλής αισθητικής, που ενσωματώνονται αόρατα στο φυσικό δόντι.",
-                list: [
-                    "Επαγγελματικός καθαρισμός με υπερήχους & αεροστιλβωση",
-                    "Αισθητικές εμφράξεις (σφραγίσματα) ρητίνης",
-                    "Προληπτικός στοματολογικός & ακτινογραφικός έλεγχος",
-                    "Οδηγίες στοματικής υγιεινής & διατροφικές συμβουλές"
-                ]
-            }
-        };
-
-        function openServiceDetail(key) {
-            const data = serviceData[key];
-            if (!data) return;
-
-            document.getElementById('serviceCategory').textContent = data.category;
-            document.getElementById('serviceModalTitle').textContent = data.title;
-            document.getElementById('serviceModalDesc1').textContent = data.desc1;
-            document.getElementById('serviceModalDesc2').textContent = data.desc2;
-
-            const listEl = document.getElementById('serviceModalList');
-            listEl.innerHTML = '';
-            data.list.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                listEl.appendChild(li);
-            });
-
-            document.getElementById('serviceModal').classList.remove('hidden');
-            document.getElementById('serviceModal').classList.add('flex');
-        }
-
-        function closeServiceModal() {
-            document.getElementById('serviceModal').classList.add('hidden');
-            document.getElementById('serviceModal').classList.remove('flex');
-        }
-
-        // --- 5. Lightbox Modal Handler ---
-        function openLightbox(imgSrc, captionText) {
-            document.getElementById('lightboxImg').src = imgSrc;
-            document.getElementById('lightboxCaption').textContent = captionText;
-            document.getElementById('lightboxModal').classList.remove('hidden');
-            document.getElementById('lightboxModal').classList.add('flex');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightboxModal').classList.add('hidden');
-            document.getElementById('lightboxModal').classList.remove('flex');
-        }
-
-        // --- 6. Mobile Drawer Toggle ---
-        function toggleMobileMenu() {
-            const drawer = document.getElementById('mobileDrawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        // --- 7. Digital Treatment Advisor Handler ---
-        const consultantData = {
-            aesthetics: {
-                title: "Αισθητική Αναβάθμιση & Dynamic Smile Design",
-                desc: "Συνιστάται αρχική συνεδρία ψηφιακής αποτύπωσης και φωτογράφισης. Θα συζητήσουμε τις επιλογές όψεων πορσελάνης, ρητίνης ή λεύκανσης για ένα φυσικό και αρμονικό χαμόγελο.",
-                visits: "2 - 3 Συνεδρίες",
-                firstStep: "Ψηφιακή Αποτύπωση"
-            },
-            missing: {
-                title: "Χειρουργική Αποκατάσταση με Εμφυτεύματα",
-                desc: "Προτείνεται ακτινογραφικός / τομογραφικός έλεγχος για την αξιολόγηση του διαθέσιμου οστού και τον ακριβή σχεδιασμό τοποθέτησης εμφυτεύματος.",
-                visits: "3 - 4 Στάδια",
-                firstStep: "Κλινικός & Ακτινολογικός Έλεγχος"
-            },
-            pain: {
-                title: "Άμεση Αντιμετώπιση Πόνου / Επείγον",
-                desc: "Προτεραιότητα είναι η άμεση ανακούφιση από τον πόνο. Πραγματοποιείται διαγνωστικός έλεγχος και ενδοδοντική ή χειρουργική παρέμβαση εφόσον απαιτείται.",
-                visits: "1 - 2 Συνεδρίες",
-                firstStep: "Άμεση Κλινική Εξέταση"
-            },
-            checkup: {
-                title: "Προληπτικός Έλεγχος & Επαγγελματικός Καθαρισμός",
-                desc: "Ολοκληρωμένος στοματολογικός έλεγχος, αφαίρεση τρυγίας με υπερήχους και έλεγχος για τυχόν αρχόμενες τερηδόνες ή ανάγκη αισθητικών σφραγισμάτων.",
-                visits: "1 Συνεδρία",
-                firstStep: "Καθαρισμός & Έλεγχος"
-            }
-        };
-
-        function selectConsultantOption(optionKey) {
-            const data = consultantData[optionKey];
-            if (!data) return;
-
-            document.getElementById('consultantStep1').classList.add('hidden');
-            
-            document.getElementById('consultantTitle').textContent = data.title;
-            document.getElementById('consultantDesc').textContent = data.desc;
-            document.getElementById('consultantVisits').textContent = data.visits;
-            document.getElementById('consultantFirstStep').textContent = data.firstStep;
-
-            document.getElementById('consultantResult').classList.remove('hidden');
-        }
-
-        function resetConsultant() {
-            document.getElementById('consultantResult').classList.add('hidden');
-            document.getElementById('consultantStep1').classList.remove('hidden');
-        }
-
-        // --- 8. Automated Macro Background Slider Cycle ---
-        let currentBgIndex = 0;
-        const bgElements = [
-            document.getElementById('heroBg1'),
-            document.getElementById('heroBg2'),
-            document.getElementById('heroBg3')
-        ];
-
-        setInterval(() => {
-            if (!bgElements[0]) return;
-            bgElements[currentBgIndex].classList.remove('opacity-40');
-            bgElements[currentBgIndex].classList.add('opacity-0');
-
-            currentBgIndex = (currentBgIndex + 1) % bgElements.length;
-
-            bgElements[currentBgIndex].classList.remove('opacity-0');
-            bgElements[currentBgIndex].classList.add('opacity-40');
-        }, 6500);
-    </script>
+<body>
+
+<div class="top"><div class="wrap">
+<a href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Αγίου Γεωργίου 3, Θεσσαλονίκη 546 35 (Πλησίον Ροτόντας)</a>
+<span>Ραντεβού Κατόπιν Τηλεφωνικής Επικοινωνίας</span>
+<a href="tel:2310219927"><b>231 021 9927</b></a>
+</div></div>
+
+<header><div class="wrap">
+<a class="brand" href="#"><strong>ΘΕΟΔΟΣΙΔΗΣ</strong><span>Χειρουργός Οδοντίατρος</span></a>
+<nav aria-label="Κύρια πλοήγηση">
+<a href="#philosophy">Φιλοσοφία</a><a href="#doctor">Ο Ιατρός</a><a href="#services">Υπηρεσίες</a><a href="#reviews">Αξιολογήσεις</a><a href="#location">Τοποθεσία</a>
+</nav>
+<a class="tel" href="tel:2310219927">Τηλ. 231 021 9927</a>
+</div></header>
+
+<main>
+<div class="hero">
+<div class="hero-l">
+<small>Εξειδικευμένο Οδοντιατρείο • Θεσσαλονίκη</small>
+<h1>Αρχιτεκτονική Χαμόγελου &amp; Προηγμένη Χειρουργική.</h1>
+<p>Συνδυάζοντας την επιστημονική αυστηρότητα της χειρουργικής στόματος με την αισθητική τελειότητα. Μια εξατομικευμένη, ανώδυνη οδοντιατρική εμπειρία στο ιστορικό κέντρο της Θεσσαλονίκης.</p>
+<div class="cta dark">
+<a class="btn solid" href="tel:2310219927">Τηλεφωνική Επικοινωνία</a>
+<a class="btn line" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Οδηγίες Πλοήγησης</a>
+</div>
+</div>
+<aside class="hero-r">
+<h2>Πρότυπη Φροντίδα</h2>
+<div><h3>Εξατομικευμένη Φροντίδα</h3><p>Θεραπευτικό πλάνο προσαρμοσμένο αποκλειστικά στις ανατομικές σας ανάγκες.</p></div>
+<div><h3>Σύγχρονη Χειρουργική</h3><p>Ελάχιστα επεμβατικές τεχνικές για ταχεία και ανώδυνη αποκατάσταση.</p></div>
+<div><h3>3D Digital Design</h3><p>Ψηφιακός σχεδιασμός χαμόγελου με ακρίβεια χιλιοστού.</p></div>
+<footer><span>ΑΓΙΟΥ ΓΕΩΡΓΙΟΥ 3</span><span>ΘΕΣΣΑΛΟΝΙΚΗ</span></footer>
+</aside>
+</div>
+
+<section id="philosophy"><div class="wrap doc">
+<div class="plate"><strong>Χαράλαμπος Θεοδοσίδης</strong><span>Χειρουργός Οδοντίατρος</span><i>Θεσσαλονίκη</i></div>
+<div class="doc-t" id="doctor">
+<h2>Η δέσμευσή μας για την υγεία &amp; την αισθητική του στόματός σας.</h2>
+<p>Ο <strong>Χαράλαμπος Θεοδοσίδης</strong> ασκεί τη χειρουργική και αισθητική οδοντιατρική με γνώμονα τη μέγιστη επιστημονική ακρίβεια, τον σεβασμό στον ασθενή και την απόλυτη άνεση κατά τη διάρκεια κάθε θεραπείας.</p>
+<p>Στο ιατρείο μας στην Αγίου Γεωργίου 3, στο κέντρο της Θεσσαλονίκης, κάθε περιστατικό αντιμετωπίζεται ως μοναδικό. Πιστεύουμε ότι ένα υγιές και όμορφο χαμόγελο είναι προϊόν προσεκτικού σχεδιασμού, ανώδυνων πρωτοκόλλων και ειλικρινούς επικοινωνίας.</p>
+<div class="pillars">
+<div><h3>Ανώδυνη προσέγγιση</h3><p>Σύγχρονες τεχνικές αναισθησίας και ήπιοι χειρουργικοί χειρισμοί.</p></div>
+<div><h3>Αρχιτεκτονική αισθητική</h3><p>Σχεδιασμός που σέβεται τα φυσικά ανατομικά χαρακτηριστικά σας.</p></div>
+<div><h3>Αυστηρή αποστείρωση</h3><p>Πρότυπα πρωτόκολλα υγιεινής και απολύμανσης τελευταίας γενιάς.</p></div>
+</div>
+</div>
+</div></section>
+
+<section id="services" class="services"><div class="wrap">
+<div class="head"><h2>Εξειδικευμένες Οδοντιατρικές Θεραπείες</h2><p>Επιλέξτε οποιαδήποτε θεραπεία για να ανακαλύψετε τις αναλυτικές πληροφορίες.</p></div>
+<div class="list">
+<button class="row" data-k="implants"><h3>Χειρουργική Στόματος &amp; Εμφυτεύματα</h3><p>Τοποθέτηση οδοντικών εμφυτευμάτων τελευταίας γενιάς, εξαγωγές εγκλείστων φρονιμιτών και οστική ανάπλαση με απόλυτη ασφάλεια.</p><span>Αναλυτικές πληροφορίες</span></button>
+<button class="row" data-k="aesthetics"><h3>Αισθητική Οδοντιατρική &amp; Όψεις</h3><p>Όψεις πορσελάνης και ρητίνης για την αποκατάσταση της μορφής, του χρώματος και της συμμετρίας του χαμόγελου.</p><span>Αναλυτικές πληροφορίες</span></button>
+<button class="row" data-k="perio"><h3>Θεραπεία Περιοδοντίου &amp; Ούλων</h3><p>Αντιμετώπισή ουλίτιδας και περιοδοντίτιδας, αναγεννητικές τεχνικές και διατήρηση της υγείας των περιοδοντικών ιστών.</p><span>Αναλυτικές πληροφορίες</span></button>
+<button class="row" data-k="endo"><h3>Ενδοδοντική Θεραπεία (Απονεύρωση)</h3><p>Μικροσκοπικά ακριβής καθαρισμός και σφράγιση ριζικών σωλήνων για τη διάσωση φυσικών δοντιών από φλεγμονές.</p><span>Αναλυτικές πληροφορίες</span></button>
+<button class="row" data-k="whitening"><h3>Λεύκανση &amp; Ψηφιακός Σχεδιασμός</h3><p>Επαγγελματική λεύκανση στο ιατρείο ή στο σπίτι με ασφαλή υλικά, συνδυασμένη με Digital Smile Design.</p><span>Αναλυτικές πληροφορίες</span></button>
+<button class="row" data-k="prevention"><h3>Γενική &amp; Προληπτική Οδοντιατρική</h3><p>Καθαρισμός, αφαίρεση τρυγίας, εμφράξεις ρητίνης (σφραγίσματα υψηλής αισθητικής) και τακτικός στοματολογικός έλεγχος.</p><span>Αναλυτικές πληροφορίες</span></button>
+</div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+<div class="head"><h2>Λόγια Ασθενών</h2><p>Διαβάστε αυτούσιες εμπειρίες ασθενών που μας εμπιστεύτηκαν το χαμόγελό τους.</p></div>
+<div class="quotes">
+<figure><blockquote>«Δεν υπάρχουν λόγια για την εξαιρετική εξυπηρέτηση και την μοναδική αγάπη για το έργο αυτού του Ανθρώπου!»</blockquote><figcaption><b>Plumbum 82</b>Google Maps Review</figcaption></figure>
+<figure><blockquote>«Εξαιρετικός επιστήμονας, υπομονετικός και με απόλυτη έμφαση στη λεπτομέρεια. Η θεραπεία ήταν εντελώς ανώδυνη.»</blockquote><figcaption><b>Μαριάννα Ρηγούλη</b>Google Maps Review</figcaption></figure>
+<figure><blockquote>«Άμεση εξυπηρέτηση σε επείγον περιστατικό. Άψογος επαγγελματίας και καθαρός χώρος στην Αγίου Γεωργίου.»</blockquote><figcaption><b>maria a</b>Google Maps Review</figcaption></figure>
+</div>
+<a class="btn line more" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Δείτε τις ζωντανές αξιολογήσεις στο Google Maps</a>
+</div></section>
+
+<section id="location" class="place"><div class="wrap loc">
+<div class="loc-t dark">
+<h2>Στο Κέντρο της Θεσσαλονίκης</h2>
+<p>Το οδοντιατρείο βρίσκεται σε κομβικό σημείο στο ιστορικό κέντρο της Θεσσαλονίκης, επί της οδού Αγίου Γεωργίου 3 (πλησίον Ροτόντας &amp; Εγνατίας). Η προσέλευση πραγματοποιείται κατόπιν τηλεφωνικής συνεννόησης.</p>
+<dl>
+<div><dt>Διεύθυνση Ιατρείου</dt><dd>Αγίου Γεωργίου 3, Θεσσαλονίκη 546 35<small>Πλησίον Ροτόντας • Plus Code: JXM2+9V</small></dd></div>
+<div><dt>Τηλέφωνο Επικοινωνίας &amp; Ραντεβού</dt><dd><a class="n" href="tel:2310219927">231 021 9927</a><small>Καλέστε μας για προγραμματισμό επίσκεψης.</small></dd></div>
+</dl>
+<div class="book">
+<h3>Προγραμματίστε την επίσκεψή σας</h3>
+<p>Για οποιαδήποτε απορία, επείγον περιστατικό ή προγραμματισμό ραντεβού, καλέστε απευθείας στη γραμματεία του ιατρείου.</p>
+<a class="btn solid" href="tel:2310219927">Κλήση στο 231 021 9927</a>
+</div>
+</div>
+<div class="map dark">
+<iframe title="Χάρτης Ιατρείου Θεοδοσίδης Χαράλαμπος" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=Αγίου+Γεωργίου+3,+Θεσσαλονίκη+546+35&hl=el&output=embed"></iframe>
+<a class="btn line" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Άνοιγμα στους Χάρτες Google</a>
+</div>
+</div></section>
+</main>
+
+<footer class="f"><div class="wrap">
+<div><strong>ΘΕΟΔΟΣΙΔΗΣ ΧΑΡΑΛΑΜΠΟΣ</strong>Χειρουργός Οδοντίατρος • Θεσσαλονίκη</div>
+<div>© 2026 Θεοδοσίδης Χαράλαμπος. All Rights Reserved.<br>Αγίου Γεωργίου 3, Θεσσαλονίκη 546 35 | Τηλ: 231 021 9927</div>
+</div></footer>
+
+<div class="bar">
+<a href="tel:2310219927">231 021 9927</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Χάρτης</a>
+</div>
+
+<dialog id="dlg" aria-labelledby="dt"><div class="d">
+<button class="x" aria-label="Κλείσιμο" onclick="dlg.close()">✕</button>
+<h3 id="dt"></h3><p id="d1"></p><p id="d2"></p>
+<h4>Τι περιλαμβάνει η θεραπεία:</h4><ul id="dl"></ul>
+<a class="btn solid" href="tel:2310219927">Τηλεφωνήστε για αυτή την Υπηρεσία</a>
+</div></dialog>
+
+<script>
+const S={
+implants:{t:"Χειρουργική Στόματος & Εμφυτεύματα",a:"Τα οδοντικά εμφυτεύματα αποτελούν τη σύγχρονη, μόνιμη και πλέον φυσική λύση για την αντικατάσταση ελλειπόντων δοντιών. Με τη χρήση τιτανίου υψηλής βιοσυμβατότητας, αποκαθιστούμε πλήρως τη μασατική λειτουργία και την αισθητική του στόματος.",b:"Η χειρουργική διαδικασία εκτελείται με απόλυτα ανώδυνα τοπικά πρωτόκολλα, ψηφιακό σχεδιασμό τοποθέτησης και ελάχιστα επεμβατικές τεχνικές για ταχεία επούλωση.",l:["Αντικατάσταση μονών ή πολλαπλών ελλειπόντων δοντιών","Χειρουργική αφαίρεση εγκλείστων φρονιμιτών","Οστική ανάπλαση (μοσχεύματα) & ανύψωση ιγμορείου","Ψηφιακά καθοδηγούμενη τοποθέτηση εμφυτευμάτων"]},
+aesthetics:{t:"Αισθητική Οδοντιατρική & Όψεις Πορσελάνης",a:"Οι όψεις πορσελάνης και ρητίνης επιτρέπουν τη διόρθωση ατελειών στο σχήμα, το μέγεθος, το χρώμα και τα διαστήματα μεταξύ των δοντιών, προσφέροντας ένα λαμπερό αλλά απόλυτα φυσικό αποτέλεσμα.",b:"Κάθε όψη κατασκευάζεται εξατομικευμένα με βάση τις αναλογίες του προσώπου σας, διατηρώντας τη μέγιστη δυνατή ποσότητα φυσικής οδοντικής ουσίας.",l:["Όψεις Πορσελάνης (Porcelain Veneers)","Όψεις Ρητίνης (Composite Veneers / Bonding)","Αποκατάσταση σπασμένων ή δυσχρωμικών δοντιών","Ανασχεδιασμός γραμμής χαμόγελου"]},
+perio:{t:"Θεραπεία Περιοδοντίου & Αναγέννηση",a:"Η υγεία των ούλων και του υποκείμενου οστού είναι η βάση για κάθε διατηρήσιμο χαμόγελο. Η περιοδοντίτιδα είναι μια χρόνια φλεγμονή που αν δεν αντιμετωπιστεί οδηγεί σε κινητικότητα και απώλεια δοντιών.",b:"Εφαρμόζουμε εξειδικευμένα θεραπευτικά πρωτόκολλα υποουλικής ριζικής απόξεσης και αναγεννητικών τεχνικών για την πλήρη σταθεροποίηση του περιοδοντίου.",l:["Θεραπεία ουλίτιδας & προχωρημένης περιοδοντίτιδας","Υποουλικός καθαρισμός & ριζική απόξεση","Περιοδοντική χειρουργική & μοσχεύματα ούλων","Πρόγραμμα περιοδικής συντήρησης (Recalls)"]},
+endo:{t:"Ενδοδοντική Θεραπεία (Απονεύρωση)",a:"Η ενδοδοντική θεραπεία είναι απαραίτητη όταν ο πολφός (το νεύρο) του δοντιού φλεγμαίνει ή μολύνεται από βαθιά τερηδόνα ή τραύμα. Στόχος μας είναι η διάσωση του φυσικού σας δοντιού.",b:"Με τη χρήση μηχανοκίνητων εργαλείων και ηλεκτρονικών εντοπιστών ακρορριζίου, η θεραπεία ολοκληρώνεται ανώδυνα και με υψηλότατα ποσοστά επιτυχίας.",l:["Πλήρης καθαρισμός και απολύμανση ριζικών σωλήνων","Έμφραξη με βιοσυμβατά ενδοδοντικά υλικά","Επαναληπτικές ενδοδοντικές θεραπείες (αναθεωρήσεις)","Άμεση ανακούφιση από οξύ οδοντικό πόνο"]},
+whitening:{t:"Λεύκανση & Digital Smile Design",a:"Η λεύκανση δοντιών είναι η πιο ασφαλής και συντηρητική μέθοδος για την αναζωογόνηση του χαμόγελου. Χρησιμοποιούμε εγκεκριμένους παράγοντες λεύκανσης που δεν καταστρέφουν την αδαμαντίνη.",b:"Συνδυάζεται με Ψηφιακό Σχεδιασμό Χαμόγελου (DSD) ώστε να προεπισκοπήσετε το τελικό αποτέλεσμα πριν ξεκινήσει η διαδικασία.",l:["Λεύκανση στο ιατρείο για άμεσα αποτελέσματα","Εξατομικευμένοι νάρθηκες λεύκανσης για το σπίτι","Συνδυαστικά πρωτόκολλα μέγιστης διάρκειας","Ψηφιακή προσομοίωση αποτελέσματος"]},
+prevention:{t:"Γενική & Προληπτική Οδοντιατρική",a:"Η πρόληψη αποτελεί τον πυρήνα της φιλοσοφίας μας. Ο τακτικός έλεγχος και ο επαγγελματικός καθαρισμός προλαμβάνουν σοβαρότερα προβλήματα πριν αυτά εκδηλωθούν.",b:"Αποκαθιστούμε τερηδονισμένα δόντια με σφραγίσματα σύνθετης ρητίνης υψηλής αισθητικής, που ενσωματώνονται αόρατα στο φυσικό δόντι.",l:["Επαγγελματικός καθαρισμός με υπερήχους & αεροστιλβωση","Αισθητικές εμφράξεις (σφραγίσματα) ρητίνης","Προληπτικός στοματολογικός & ακτινογραφικός έλεγχος","Οδηγίες στοματικής υγιεινής & διατροφικές συμβουλές"]}
+};
+const dlg=document.getElementById('dlg');
+document.querySelectorAll('.row').forEach(r=>r.addEventListener('click',()=>{
+  const s=S[r.dataset.k];
+  dt.textContent=s.t;d1.textContent=s.a;d2.textContent=s.b;
+  dl.replaceChildren(...s.l.map(x=>Object.assign(document.createElement('li'),{textContent:x})));
+  dlg.showModal();
+}));
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+</script>
 </body>
 </html>
