@@ -214,7 +214,7 @@ body{padding-bottom:72px}
 <div class="top"><div class="wrap">
 <div class="locs">
 <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Θεσσαλονίκη</a></span>
-<span><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><a href="https://maps.app.goo.gl/hPSsb89ueFk2Lrho7" target="_blank" rel="noopener">Παλαιόχωρα Χαλκιδικής</a></span>
+<span><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Παλαιόχωρα" target="_blank" rel="noopener">Παλαιόχωρα Χαλκιδικής</a></span>
 </div>
 <span>Ραντεβού κατόπιν τηλεφωνικής επικοινωνίας</span>
 </div></div>
@@ -295,23 +295,23 @@ body{padding-bottom:72px}
 <div class="branches">
 <div class="branch">
 <h4><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Θεσσαλονίκη</h4>
-<p>Αγίου Γεωργίου 3, Τ.Κ. 546 35<br>Πλησίον Ροτόντας • JXM2+9V</p>
+<p>Αγίου Γεωργίου 3, Τ.Κ. 546 35<br>Πλησίον Ροτόντας</p>
 <p><a href="tel:2310219927">231 021 9927</a></p>
 </div>
 <div class="branch">
 <h4><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Παλαιόχωρα Χαλκιδικής</h4>
-<p>Παλαιόχωρα, Τ.Κ. 630 73<br>Plus Code: GC2X+Q6</p>
+<p>Παλαιόχωρα, Τ.Κ. 630 73</p>
 <p><a href="tel:2371061327">2371 061327</a></p>
 </div>
 </div>
 </div>
 <div class="map dark">
 <div class="tabs">
-<a href="#location" class="on" onclick="setMap('thes');return false;">Θεσσαλονίκη</a>
-<a href="#location" onclick="setMap('pal');return false;">Παλαιόχωρα</a>
+<a href="#location" class="on" onclick="setMap('thes',this);return false;">Θεσσαλονίκη</a>
+<a href="#location" onclick="setMap('pal',this);return false;">Παλαιόχωρα</a>
 </div>
-<iframe id="mapFrame" title="Χάρτης Ιατρείου Θεοδοσίδης Χαράλαμπος" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=Αγίου+Γεωργίου+3,+Θεσσαλονίκη+546+35&hl=el&output=embed"></iframe>
-<a class="btn line" id="mapLink" href="https://maps.app.goo.gl/hPSsb89ueFk2Lrho7" target="_blank" rel="noopener">Άνοιγμα στους Χάρτες</a>
+<iframe id="mapFrame" title="Χάρτης Ιατρείου Θεοδοσίδης Χαράλαμπος" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη&hl=el&output=embed"></iframe>
+<a class="btn line" id="mapLink" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Άνοιγμα στους Χάρτες</a>
 </div>
 </div></section>
 </main>
@@ -355,14 +355,14 @@ document.querySelectorAll('.row').forEach(r=>r.addEventListener('click',()=>{
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 
 const MAPS={
-thes:{src:"https://www.google.com/maps?q=Αγίου+Γεωργίου+3,+Θεσσαλονίκη+546+35&hl=el&output=embed",link:"https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη"},
-pal:{src:"https://www.google.com/maps?q=GC2X%2BQ6+Παλαιόχωρα+Χαλκιδικής&hl=el&output=embed",link:"https://maps.app.goo.gl/hPSsb89ueFk2Lrho7"}
+thes:{src:"https://www.google.com/maps?q=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη&hl=el&output=embed",link:"https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη"},
+pal:{src:"https://www.google.com/maps?q=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Παλαιόχωρα+Χαλκιδικής&hl=el&output=embed",link:"https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Παλαιόχωρα+Χαλκιδικής"}
 };
-function setMap(k){
+function setMap(k,el){
   document.getElementById('mapFrame').src=MAPS[k].src;
   document.getElementById('mapLink').href=MAPS[k].link;
   document.querySelectorAll('.map .tabs a').forEach(a=>a.classList.remove('on'));
-  event.currentTarget.classList.add('on');
+  el.classList.add('on');
 }
 </script>
 </body>
