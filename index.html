@@ -78,8 +78,8 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(85vh,780px);position:relative;overflow:hidden}
 .hero-l{position:relative;color:var(--ink);padding:clamp(60px,8vw,120px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden}
 .hero-l::before{content:"";position:absolute;inset:0;
-  background:linear-gradient(115deg,rgba(26,42,58,.97) 0%,rgba(34,55,74,.9) 50%,rgba(44,70,91,.78) 100%),
-  url('https://images.pexels.com/photos/5355864/pexels-photo-5355864.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+  background:linear-gradient(115deg,rgba(26,42,58,.92) 0%,rgba(34,55,74,.82) 50%,rgba(44,70,91,.7) 100%),
+  url('https://images.pexels.com/photos/4687360/pexels-photo-4687360.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
   z-index:0;transform:scale(1.05)}
 .hero-l>*{position:relative;z-index:1}
 .hero-l small{font-size:.82rem;color:var(--accent);letter-spacing:.18em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
@@ -97,10 +97,10 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* DOC */
 .doc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,100px);align-items:stretch}
-.plate{position:relative;color:var(--ink);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:flex-end;min-height:460px;overflow:hidden;border:1px solid var(--line-2)}
+.plate{position:relative;color:var(--ink);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:flex-end;min-height:520px;overflow:hidden;border:1px solid var(--line-2)}
 .plate::before{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(26,42,58,.25) 0%,rgba(26,42,58,.98) 85%),
-  url('https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;
+  background:linear-gradient(180deg,rgba(26,42,58,.15) 0%,rgba(26,42,58,.98) 88%),
+  url('https://images.pexels.com/photos/4270362/pexels-photo-4270362.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;
   z-index:0}
 .plate>*{position:relative;z-index:1}
 .plate strong{font:400 clamp(1.5rem,2.4vw,2rem)/1.15 var(--serif)}
@@ -190,7 +190,7 @@ dialog[open]{animation:pop .3s var(--ease)}
 @media(max-width:960px){
 nav{display:none}
 .hero,.doc,.loc,.list{grid-template-columns:1fr}
-.plate{min-height:360px}
+.plate{min-height:400px}
 .quotes{grid-template-columns:1fr;gap:36px}
 .quotes figure{border:0;margin:0;padding:0 0 36px;border-bottom:1px solid var(--line-2)}
 .quotes figure:last-child{border:0;padding:0}
@@ -227,7 +227,7 @@ body{padding-bottom:72px}
 <span class="txt"><strong>ΘΕΟΔΟΣΙΔΗΣ ΧΑΡΑΛΑΜΠΟΣ</strong><span>Χειρουργός Οδοντίατρος</span></span>
 </a>
 <nav aria-label="Κύρια πλοήγηση">
-<a href="#philosophy">Φιλοσοφία</a><a href="#doctor">Ο Ιατρός</a><a href="#services">Υπηρεσίες</a><a href="#reviews">Αξιολογήσεις</a><a href="#location">Ιατρεία</a>
+<a href="#doctor">Ο Ιατρός</a><a href="#services">Υπηρεσίες</a><a href="#reviews">Αξιολογήσεις</a><a href="#location">Ιατρεία</a>
 </nav>
 <a class="tel" href="tel:2310219927">231 021 9927</a>
 </div></header>
