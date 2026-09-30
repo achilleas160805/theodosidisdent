@@ -43,26 +43,31 @@ h2{font-size:clamp(1.8rem,3.2vw,2.6rem);max-width:24ch}
 section{padding-block:clamp(72px,9vw,120px)}
 
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;font:600 .85rem var(--sans);letter-spacing:.04em;
-  border:1px solid var(--line);color:var(--ink);transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);cursor:pointer;background:none}
-.btn:hover{border-color:var(--accent);color:var(--accent)}
+  border:1px solid var(--line);color:var(--ink);transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease),transform .25s var(--ease);cursor:pointer;background:none;position:relative}
+.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 .btn.solid{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-.btn.solid:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--bg)}
+.btn.solid:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--bg);transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
 
 /* TOP BAR */
 .top{background:var(--bg-2);border-bottom:1px solid var(--line-2);font-size:.8rem;color:var(--ink-soft)}
 .top .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:10px;align-items:center}
 .top .locs{display:flex;gap:24px;flex-wrap:wrap}
 .top .locs span{display:inline-flex;align-items:center;gap:7px}
-.top .locs svg{width:12px;height:12px;fill:none;stroke:var(--accent);stroke-width:1.8;opacity:.8}
+.top .locs svg{width:12px;height:12px;fill:none;stroke:var(--accent);stroke-width:1.8;opacity:.8;transition:transform .3s var(--ease)}
+.top .locs span:hover svg{transform:scale(1.15)}
 .top a:hover{color:var(--accent-soft)}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:20;background:rgba(26,42,58,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2)}
+header{position:sticky;top:0;z-index:20;background:rgba(26,42,58,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2);transition:box-shadow .3s var(--ease)}
+header.scrolled{box-shadow:0 8px 30px -10px rgba(0,0,0,.5)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:92px}
 .brand{display:flex;align-items:center;gap:18px;line-height:1;padding:6px 0}
 .brand .mk{width:32px;height:32px;flex:none;display:grid;place-items:center;color:var(--accent);transition:transform .4s var(--ease)}
 .brand:hover .mk{transform:rotate(-6deg)}
 .brand .mk svg{width:100%;height:100%;display:block}
+.brand .mk svg path:first-child{stroke-dasharray:140;stroke-dashoffset:140;animation:drawTooth 1.4s var(--ease) .2s forwards}
+@keyframes drawTooth{to{stroke-dashoffset:0}}
 .brand .divider{width:1px;height:38px;background:linear-gradient(180deg,transparent,var(--line),transparent);flex:none}
 .brand .txt{display:flex;flex-direction:column;gap:5px}
 .brand .name{font:500 1.02rem var(--serif);letter-spacing:.28em;color:var(--ink);text-transform:uppercase;line-height:1}
@@ -74,28 +79,41 @@ nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;bac
 nav a:hover{color:var(--ink)}
 nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .tel{font-weight:600;letter-spacing:.04em;font-size:.82rem;padding:11px 20px;border:1px solid var(--line);color:var(--ink);transition:all .3s var(--ease)}
-.tel:hover{border-color:var(--accent);color:var(--accent)}
+.tel:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
 /* HERO */
 .hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(85vh,780px);position:relative;overflow:hidden}
 .hero-l{position:relative;color:var(--ink);padding:clamp(60px,8vw,120px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden}
-.hero-l::before{content:"";position:absolute;inset:0;
+.hero-l::before{content:"";position:absolute;inset:-5% 0 -5% 0;
   background:linear-gradient(115deg,rgba(26,42,58,.9) 0%,rgba(34,55,74,.78) 50%,rgba(44,70,91,.62) 100%),
   url('hero.jpg') center/cover no-repeat;
-  z-index:0}
-.hero-l>*{position:relative;z-index:1}
+  z-index:0;will-change:transform}
+.hero-l>*{position:relative;z-index:1;opacity:0;transform:translateY(24px);animation:heroIn .9s var(--ease) forwards}
+.hero-l>small{animation-delay:.15s}
+.hero-l>h1{animation-delay:.3s}
+.hero-l>p{animation-delay:.45s}
+.hero-l>.cta{animation-delay:.6s}
+@keyframes heroIn{to{opacity:1;transform:translateY(0)}}
 .hero-l small{font-size:.82rem;color:var(--accent);letter-spacing:.18em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
-.hero-l small::before{content:"";width:30px;height:1px;background:var(--accent)}
+.hero-l small::before{content:"";width:30px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;animation:lineIn .8s var(--ease) .5s forwards}
+@keyframes lineIn{to{transform:scaleX(1)}}
 .hero-l h1{font-size:clamp(2.4rem,5vw,4.4rem);max-width:15ch;line-height:1.06}
 .hero-l h1 em{font-style:italic;color:var(--accent-soft)}
 .hero-l p{max-width:48ch;color:var(--ink-soft);font-size:1.02rem;font-weight:400}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
 .hero-r{padding:clamp(40px,6vw,80px) var(--pad);display:flex;flex-direction:column;justify-content:center;background:var(--bg-2);border-left:1px solid var(--line-2)}
-.hero-r h2{font:600 .72rem var(--sans);color:var(--accent);letter-spacing:.22em;text-transform:uppercase;margin-bottom:12px;max-width:none}
-.hero-r .item{padding-block:22px;border-top:1px solid var(--line-2)}
-.hero-r h3{font-size:1.3rem;margin-bottom:6px;color:var(--ink)}
+.hero-r h2{font:600 .72rem var(--sans);color:var(--accent);letter-spacing:.22em;text-transform:uppercase;margin-bottom:12px;max-width:none;opacity:0;transform:translateY(14px);animation:heroIn .8s var(--ease) .3s forwards}
+.hero-r .item{padding-block:22px;border-top:1px solid var(--line-2);opacity:0;transform:translateY(18px);animation:heroIn .8s var(--ease) forwards;position:relative;transition:padding-left .4s var(--ease)}
+.hero-r .item:nth-of-type(1){animation-delay:.5s}
+.hero-r .item:nth-of-type(2){animation-delay:.65s}
+.hero-r .item:nth-of-type(3){animation-delay:.8s}
+.hero-r .item::before{content:"";position:absolute;left:0;top:22px;width:0;height:1px;background:var(--accent);transition:width .4s var(--ease)}
+.hero-r .item:hover{padding-left:16px}
+.hero-r .item:hover::before{width:10px}
+.hero-r h3{font-size:1.3rem;margin-bottom:6px;color:var(--ink);transition:color .3s var(--ease)}
+.hero-r .item:hover h3{color:var(--accent-soft)}
 .hero-r p{font-size:.9rem;color:var(--ink-mute)}
-.hero-r footer{display:flex;justify-content:space-between;border-top:1px solid var(--line-2);padding-top:18px;font-size:.72rem;font-weight:600;color:var(--accent);letter-spacing:.14em;text-transform:uppercase}
+.hero-r footer{display:flex;justify-content:space-between;border-top:1px solid var(--line-2);padding-top:18px;font-size:.72rem;font-weight:600;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;opacity:0;animation:heroIn .8s var(--ease) .95s forwards}
 
 /* DOC */
 .doc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,100px);align-items:stretch}
@@ -103,7 +121,8 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .plate::before{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(26,42,58,.15) 0%,rgba(26,42,58,.98) 88%),
   url('hero2.jpg') center/cover no-repeat;
-  z-index:0}
+  z-index:0;transition:transform 1.2s var(--ease)}
+.plate:hover::before{transform:scale(1.04)}
 .plate>*{position:relative;z-index:1}
 .plate strong{font:400 clamp(1.5rem,2.4vw,2rem)/1.15 var(--serif)}
 .plate span{color:var(--accent);margin-top:10px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
@@ -112,8 +131,11 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .doc-t p{max-width:60ch;color:var(--ink-soft)}
 .doc-t p strong{color:var(--ink);font-weight:500}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-top:28px;border-top:1px solid var(--line-2)}
+.pillars>div{transition:transform .4s var(--ease)}
+.pillars>div:hover{transform:translateY(-4px)}
 .pillars h3{font:500 .92rem var(--sans);margin-bottom:6px;display:flex;align-items:center;gap:9px;color:var(--ink)}
-.pillars h3 svg{width:20px;height:20px;flex:none;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.pillars h3 svg{width:20px;height:20px;flex:none;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s var(--ease)}
+.pillars>div:hover h3 svg{transform:scale(1.1) rotate(-4deg)}
 .pillars p{font-size:.86rem;color:var(--ink-mute);line-height:1.6}
 
 /* SERVICES */
@@ -121,8 +143,17 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .head{display:flex;justify-content:space-between;align-items:end;gap:36px;flex-wrap:wrap;margin-bottom:52px}
 .head p{max-width:36ch;color:var(--ink-mute);font-size:.92rem}
 .list{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(36px,6vw,100px)}
-.row{all:unset;box-sizing:border-box;display:grid;gap:8px;padding:32px 0;border-top:1px solid var(--line-2);cursor:pointer;position:relative}
+.row{all:unset;box-sizing:border-box;display:grid;gap:8px;padding:32px 0;border-top:1px solid var(--line-2);cursor:pointer;position:relative;transition:padding-left .45s var(--ease)}
+.row:nth-child(1){transition-delay:0s}
+.row:nth-child(2){transition-delay:.05s}
+.row:nth-child(3){transition-delay:.1s}
+.row:nth-child(4){transition-delay:.15s}
+.row:nth-child(5){transition-delay:.2s}
+.row:nth-child(6){transition-delay:.25s}
 .row:last-child,.row:nth-last-child(2){border-bottom:1px solid var(--line-2)}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(142,180,206,.05),transparent);transition:width .5s var(--ease);pointer-events:none}
+.row:hover{padding-left:22px}
+.row:hover::before{width:100%}
 .row:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
 .row h3{font-size:1.35rem;transition:color .25s;color:var(--ink)}
 .row p{color:var(--ink-mute);font-size:.9rem;max-width:52ch;line-height:1.65}
@@ -133,9 +164,11 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* REVIEWS */
 .quotes{display:grid;grid-template-columns:repeat(3,1fr)}
-.quotes figure{padding:8px clamp(20px,3vw,40px) 8px 0;margin-right:clamp(20px,3vw,40px);border-right:1px solid var(--line-2);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.quotes figure{padding:8px clamp(20px,3vw,40px) 8px 0;margin-right:clamp(20px,3vw,40px);border-right:1px solid var(--line-2);display:flex;flex-direction:column;justify-content:space-between;gap:28px;transition:transform .5s var(--ease)}
+.quotes figure:hover{transform:translateY(-4px)}
 .quotes figure:last-child{border:0;margin:0}
-.quotes .qm{width:28px;height:28px;fill:var(--accent);opacity:.4}
+.quotes .qm{width:28px;height:28px;fill:var(--accent);opacity:.4;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.quotes figure:hover .qm{opacity:.7;transform:scale(1.08)}
 .quotes blockquote{font:400 1.25rem/1.5 var(--serif);color:var(--ink);font-style:italic}
 .quotes figcaption{font-size:.82rem;color:var(--ink-mute)}
 .quotes figcaption b{display:block;color:var(--accent);font-weight:500;margin-bottom:3px;letter-spacing:.06em;font-size:.78rem}
@@ -151,7 +184,10 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .loc-t{display:flex;flex-direction:column;gap:28px}
 .loc-t>p{color:var(--ink-soft);max-width:52ch}
 .loc .branches{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
-.branch{padding-block:22px;border-top:1px solid var(--line-2)}
+.branch{padding-block:22px;border-top:1px solid var(--line-2);position:relative;transition:padding-left .4s var(--ease)}
+.branch::after{content:"";position:absolute;top:-1px;left:0;width:24px;height:1px;background:var(--accent);transition:width .5s var(--ease)}
+.branch:hover::after{width:56px}
+.branch:hover{padding-left:8px}
 .branch h4{font:600 .78rem var(--sans);color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:8px;letter-spacing:.1em;text-transform:uppercase}
 .branch h4 svg{width:14px;height:14px;fill:none;stroke:var(--accent);stroke-width:1.8}
 .branch p{font-size:.9rem;color:var(--ink-soft);line-height:1.6}
@@ -177,7 +213,7 @@ footer.f a:hover{color:var(--accent)}
 dialog{border:1px solid var(--line-2);padding:0;max-width:620px;width:calc(100% - 32px);background:var(--bg-2);color:var(--ink);margin:auto}
 dialog::backdrop{background:rgba(26,42,58,.85);backdrop-filter:blur(6px)}
 dialog[open]{animation:pop .3s var(--ease)}
-@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 .d{padding:clamp(26px,4vw,48px);display:flex;flex-direction:column;gap:18px}
 .d h3{font-size:clamp(1.5rem,3vw,2rem);padding-right:40px}
 .d p{color:var(--ink-soft);font-size:.92rem}
@@ -185,8 +221,20 @@ dialog[open]{animation:pop .3s var(--ease)}
 .d ul{padding-left:22px;font-size:.9rem;color:var(--ink-soft)}
 .d li{padding-block:3px}.d li::marker{color:var(--accent)}
 .x{position:absolute;top:14px;right:14px;width:40px;height:40px;background:none;border:1px solid var(--line-2);cursor:pointer;font-size:1.05rem;color:var(--ink);transition:all .25s var(--ease)}
-.x:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.x:hover{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(90deg)}
 .d .btn{align-self:flex-start;margin-top:10px}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);will-change:opacity,transform}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-stagger>*{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal-stagger.visible>*{opacity:1;transform:translateY(0)}
+.reveal-stagger.visible>*:nth-child(1){transition-delay:.05s}
+.reveal-stagger.visible>*:nth-child(2){transition-delay:.15s}
+.reveal-stagger.visible>*:nth-child(3){transition-delay:.25s}
+.reveal-stagger.visible>*:nth-child(4){transition-delay:.35s}
+.reveal-stagger.visible>*:nth-child(5){transition-delay:.45s}
+.reveal-stagger.visible>*:nth-child(6){transition-delay:.55s}
 
 .bar{display:none}
 @media(max-width:960px){
@@ -212,7 +260,10 @@ header .wrap{height:76px}
 .bar a{padding:13px 8px;text-align:center;font-weight:600;font-size:.76rem;border:1px solid var(--line-2);color:var(--ink);letter-spacing:.04em;flex:1}
 .bar a:first-child{background:var(--accent);color:var(--bg);border-color:var(--accent)}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.reveal,.reveal-stagger>*,.hero-l>*,.hero-r>*{opacity:1!important;transform:none!important}
+}
 </style>
 </head>
 <body>
@@ -225,7 +276,7 @@ header .wrap{height:76px}
 <span>Ραντεβού κατόπιν τηλεφωνικής επικοινωνίας</span>
 </div></div>
 
-<header><div class="wrap">
+<header id="hdr"><div class="wrap">
 <a class="brand" href="#" aria-label="Θεοδοσίδης Χαράλαμπος - Αρχική">
 <span class="mk" aria-hidden="true">
 <svg viewBox="0 0 48 56" fill="none">
@@ -247,7 +298,7 @@ header .wrap{height:76px}
 
 <main>
 <div class="hero">
-<div class="hero-l">
+<div class="hero-l" id="heroBg">
 <small>Θεσσαλονίκη • Παλαιόχωρα Χαλκιδικής</small>
 <h1>Αρχιτεκτονική <em>Χαμόγελου</em> &amp; Προηγμένη Χειρουργική.</h1>
 <p>Συνδυάζοντας την επιστημονική αυστηρότητα της χειρουργικής στόματος με την αισθητική τελειότητα. Μια εξατομικευμένη, ανώδυνη οδοντιατρική εμπειρία σε δύο έδρες.</p>
@@ -266,12 +317,12 @@ header .wrap{height:76px}
 </div>
 
 <section id="philosophy"><div class="wrap doc">
-<div class="plate"><strong>Χαράλαμπος Θεοδοσίδης</strong><span>Χειρουργός Οδοντίατρος</span><i>Διπλή Έδρα: Θεσσαλονίκη • Παλαιόχωρα</i></div>
+<div class="plate reveal"><strong>Χαράλαμπος Θεοδοσίδης</strong><span>Χειρουργός Οδοντίατρος</span><i>Διπλή Έδρα: Θεσσαλονίκη • Παλαιόχωρα</i></div>
 <div class="doc-t" id="doctor">
-<h2>Η δέσμευσή μας για την υγεία &amp; την αισθητική του στόματός σας.</h2>
-<p>Ο <strong>Χαράλαμπος Θεοδοσίδης</strong> ασκεί τη χειρουργική και αισθητική οδοντιατρική με γνώμονα τη μέγιστη επιστημονική ακρίβεια, τον σεβασμό στον ασθενή και την απόλυτη άνεση κατά τη διάρκεια κάθε θεραπείας.</p>
-<p>Με <strong>δύο ιατρεία</strong> — στο ιστορικό κέντρο της Θεσσαλονίκης (Αγίου Γεωργίου 3) και στην Παλαιόχωρα Χαλκιδικής — κάθε περιστατικό αντιμετωπίζεται ως μοναδικό. Πιστεύουμε ότι ένα υγιές και όμορφο χαμόγελο είναι προϊόν προσεκτικού σχεδιασμού, ανώδυνων πρωτοκόλλων και ειλικρινούς επικοινωνίας.</p>
-<div class="pillars">
+<h2 class="reveal">Η δέσμευσή μας για την υγεία &amp; την αισθητική του στόματός σας.</h2>
+<p class="reveal">Ο <strong>Χαράλαμπος Θεοδοσίδης</strong> ασκεί τη χειρουργική και αισθητική οδοντιατρική με γνώμονα τη μέγιστη επιστημονική ακρίβεια, τον σεβασμό στον ασθενή και την απόλυτη άνεση κατά τη διάρκεια κάθε θεραπείας.</p>
+<p class="reveal">Με <strong>δύο ιατρεία</strong> — στο ιστορικό κέντρο της Θεσσαλονίκης (Αγίου Γεωργίου 3) και στην Παλαιόχωρα Χαλκιδικής — κάθε περιστατικό αντιμετωπίζεται ως μοναδικό. Πιστεύουμε ότι ένα υγιές και όμορφο χαμόγελο είναι προϊόν προσεκτικού σχεδιασμού, ανώδυνων πρωτοκόλλων και ειλικρινούς επικοινωνίας.</p>
+<div class="pillars reveal-stagger">
 <div><h3><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>Ανώδυνη προσέγγιση</h3><p>Σύγχρονες τεχνικές αναισθησίας και ήπιοι χειρουργικοί χειρισμοί.</p></div>
 <div><h3><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5.4L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-1.6z"/></svg>Αρχιτεκτονική αισθητική</h3><p>Σχεδιασμός που σέβεται τα φυσικά ανατομικά χαρακτηριστικά σας.</p></div>
 <div><h3><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Αυστηρή αποστείρωση</h3><p>Πρότυπα πρωτόκολλα υγιεινής και απολύμανσης τελευταίας γενιάς.</p></div>
@@ -280,8 +331,8 @@ header .wrap{height:76px}
 </div></section>
 
 <section id="services" class="services"><div class="wrap">
-<div class="head"><h2>Εξειδικευμένες Θεραπείες</h2><p>Επιλέξτε οποιαδήποτε θεραπεία για να ανακαλύψετε τις αναλυτικές πληροφορίες.</p></div>
-<div class="list">
+<div class="head reveal"><h2>Εξειδικευμένες Θεραπείες</h2><p>Επιλέξτε οποιαδήποτε θεραπεία για να ανακαλύψετε τις αναλυτικές πληροφορίες.</p></div>
+<div class="list reveal-stagger">
 <button class="row" data-k="implants"><h3>Χειρουργική Στόματος &amp; Εμφυτεύματα</h3><p>Τοποθέτηση οδοντικών εμφυτευμάτων τελευταίας γενιάς, εξαγωγές εγκλείστων φρονιμιτών και οστική ανάπλαση με απόλυτη ασφάλεια.</p><span>Αναλυτικές πληροφορίες</span></button>
 <button class="row" data-k="aesthetics"><h3>Αισθητική Οδοντιατρική &amp; Όψεις</h3><p>Όψεις πορσελάνης και ρητίνης για την αποκατάσταση της μορφής, του χρώματος και της συμμετρίας του χαμόγελου.</p><span>Αναλυτικές πληροφορίες</span></button>
 <button class="row" data-k="perio"><h3>Θεραπεία Περιοδοντίου &amp; Ούλων</h3><p>Αντιμετώπισή ουλίτιδας και περιοδοντίτιδας, αναγεννητικές τεχνικές και διατήρηση της υγείας των περιοδοντικών ιστών.</p><span>Αναλυτικές πληροφορίες</span></button>
@@ -292,20 +343,20 @@ header .wrap{height:76px}
 </div></section>
 
 <section id="reviews"><div class="wrap">
-<div class="head"><h2>Λόγια Ασθενών</h2><p>Διαβάστε αυτούσιες εμπειρίες ασθενών που μας εμπιστεύτηκαν το χαμόγελό τους.</p></div>
-<div class="quotes">
+<div class="head reveal"><h2>Λόγια Ασθενών</h2><p>Διαβάστε αυτούσιες εμπειρίες ασθενών που μας εμπιστεύτηκαν το χαμόγελό τους.</p></div>
+<div class="quotes reveal-stagger">
 <figure><svg class="qm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4H9c0 2 1 3 2 3v3c-3 0-4-2-4-5zm8 0h4v4h-2c0 2 1 3 2 3v3c-3 0-4-2-4-5z"/></svg><blockquote>«Δεν υπάρχουν λόγια για την εξαιρετική εξυπηρέτηση και την μοναδική αγάπη για το έργο αυτού του Ανθρώπου!»</blockquote><figcaption><b>Plumbum 82</b>Google Maps Review</figcaption></figure>
 <figure><svg class="qm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4H9c0 2 1 3 2 3v3c-3 0-4-2-4-5zm8 0h4v4h-2c0 2 1 3 2 3v3c-3 0-4-2-4-5z"/></svg><blockquote>«Εξαιρετικός επιστήμονας, υπομονετικός και με απόλυτη έμφαση στη λεπτομέρεια. Η θεραπεία ήταν εντελώς ανώδυνη.»</blockquote><figcaption><b>Μαριάννα Ρηγούλη</b>Google Maps Review</figcaption></figure>
 <figure><svg class="qm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4H9c0 2 1 3 2 3v3c-3 0-4-2-4-5zm8 0h4v4h-2c0 2 1 3 2 3v3c-3 0-4-2-4-5z"/></svg><blockquote>«Άμεση εξυπηρέτηση σε επείγον περιστατικό. Άψογος επαγγελματίας και καθαρός χώρος στην Αγίου Γεωργίου.»</blockquote><figcaption><b>maria a</b>Google Maps Review</figcaption></figure>
 </div>
-<a class="btn line more" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Αξιολογήσεις στο Google</a>
+<a class="btn line more reveal" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Αξιολογήσεις στο Google</a>
 </div></section>
 
 <section id="location" class="place"><div class="wrap loc">
 <div class="loc-t dark">
-<h2>Δύο Ιατρεία σε Θεσσαλονίκη &amp; Χαλκιδική</h2>
-<p>Ο Χαράλαμπος Θεοδοσίδης διατηρεί διπλή έδρα — στο ιστορικό κέντρο της Θεσσαλονίκης (πλησίον Ροτόντας) και στην Παλαιόχωρα Χαλκιδικής. Η προσέλευση γίνεται κατόπιν τηλεφωνικής συνεννόησης.</p>
-<div class="branches">
+<h2 class="reveal">Δύο Ιατρεία σε Θεσσαλονίκη &amp; Χαλκιδική</h2>
+<p class="reveal">Ο Χαράλαμπος Θεοδοσίδης διατηρεί διπλή έδρα — στο ιστορικό κέντρο της Θεσσαλονίκης (πλησίον Ροτόντας) και στην Παλαιόχωρα Χαλκιδικής. Η προσέλευση γίνεται κατόπιν τηλεφωνικής συνεννόησης.</p>
+<div class="branches reveal-stagger">
 <div class="branch">
 <h4><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Θεσσαλονίκη</h4>
 <p>Αγίου Γεωργίου 3, Τ.Κ. 546 35<br>Πλησίον Ροτόντας</p>
@@ -318,7 +369,7 @@ header .wrap{height:76px}
 </div>
 </div>
 </div>
-<div class="map dark">
+<div class="map dark reveal">
 <div class="tabs">
 <a href="#location" class="on" onclick="setMap('thes',this);return false;">Θεσσαλονίκη</a>
 <a href="#location" onclick="setMap('pal',this);return false;">Παλαιόχωρα</a>
@@ -377,6 +428,39 @@ function setMap(k,el){
   document.querySelectorAll('.map .tabs a').forEach(a=>a.classList.remove('on'));
   el.classList.add('on');
 }
+
+/* SCROLL REVEAL */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>io.observe(el));
+
+/* HEADER SHADOW ON SCROLL */
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>{
+  hdr.classList.toggle('scrolled',window.scrollY>20);
+},{passive:true});
+
+/* HERO PARALLAX */
+const heroBg=document.querySelector('.hero-l');
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(!ticking && window.scrollY<window.innerHeight){
+    requestAnimationFrame(()=>{
+      const y=window.scrollY;
+      heroBg.style.setProperty('--py',y*0.25+'px');
+      const before=heroBg;
+      if(before) before.style.setProperty('background-position-y',`calc(50% + ${y*0.25}px)`);
+      ticking=false;
+    });
+    ticking=true;
+  }
+},{passive:true});
 </script>
 </body>
 </html>
