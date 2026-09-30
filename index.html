@@ -36,8 +36,8 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 .brand .mk{width:38px;height:38px;flex:none;background:var(--ink);border-radius:8px;display:grid;place-items:center}
 .brand .mk svg{width:24px;height:24px;display:block}
 .brand .txt{display:flex;flex-direction:column}
-.brand strong{font:500 1.55rem var(--serif);letter-spacing:.06em}
-.brand span{font-size:.78rem;color:var(--slate);margin-top:4px}
+.brand strong{font:500 1.25rem var(--serif);letter-spacing:.06em}
+.brand span{font-size:.74rem;color:var(--slate);margin-top:4px}
 nav{display:flex;gap:30px;font-size:.92rem;font-weight:500}
 nav a{padding-block:4px;border-bottom:1px solid transparent;transition:border-color .25s}
 nav a:hover{border-color:var(--ink)}
@@ -46,7 +46,7 @@ nav a:hover{border-color:var(--ink)}
 
 .hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(82vh,760px)}
 .hero-l{position:relative;color:#fff;padding:clamp(48px,8vw,110px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden}
-.hero-l::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(16,41,45,.96) 0%,rgba(16,41,45,.82) 45%,rgba(43,107,112,.65) 100%),url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;z-index:0}
+.hero-l::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(16,41,45,.97) 0%,rgba(16,41,45,.86) 45%,rgba(43,107,112,.72) 100%),url('https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;z-index:0}
 .hero-l>*{position:relative;z-index:1}
 .hero-l small{font-size:.9rem;color:var(--on-dark)}
 .hero-l h1{font-size:clamp(2.5rem,5.4vw,4.9rem);max-width:13ch}
@@ -61,9 +61,9 @@ nav a:hover{border-color:var(--ink)}
 
 .doc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px);align-items:stretch}
 .plate{position:relative;color:#fff;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:flex-end;min-height:440px;overflow:hidden}
-.plate::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,41,45,.15) 0%,rgba(16,41,45,.88) 78%),url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;z-index:0}
+.plate::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,41,45,.2) 0%,rgba(16,41,45,.92) 82%),url('https://images.pexels.com/photos/3845981/pexels-photo-3845981.jpeg?auto=compress&cs=tinysrgb&w=1000') center/cover no-repeat;z-index:0}
 .plate>*{position:relative;z-index:1}
-.plate strong{font:400 clamp(1.8rem,3vw,2.6rem)/1.15 var(--serif)}
+.plate strong{font:400 clamp(1.6rem,2.6vw,2.3rem)/1.15 var(--serif)}
 .plate span{color:var(--on-dark);margin-top:10px}
 .plate i{margin-top:28px;padding-top:14px;border-top:1px solid rgba(255,255,255,.25);font-style:normal;font-size:.85rem;color:var(--on-dark)}
 .doc-t{display:flex;flex-direction:column;gap:26px;justify-content:center}
@@ -98,7 +98,7 @@ nav a:hover{border-color:var(--ink)}
 .more{margin-top:56px}
 
 .place{background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.place::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;opacity:.08;z-index:0}
+.place::before{content:"";position:absolute;inset:0;background:url('https://images.pexels.com/photos/3845737/pexels-photo-3845737.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;opacity:.09;z-index:0}
 .place .wrap{position:relative;z-index:1}
 .loc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
 .loc-t{display:flex;flex-direction:column;gap:28px}
@@ -116,7 +116,7 @@ nav a:hover{border-color:var(--ink)}
 
 footer.f{background:var(--paper);border-top:1px solid var(--line);padding-block:40px;font-size:.88rem;color:var(--slate)}
 footer.f .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-footer.f strong{display:block;font:500 1.2rem var(--serif);letter-spacing:.05em;color:var(--ink)}
+footer.f strong{display:block;font:500 1.1rem var(--serif);letter-spacing:.05em;color:var(--ink)}
 
 dialog{border:0;padding:0;max-width:640px;width:calc(100% - 32px);background:var(--paper);color:var(--ink);margin:auto}
 dialog::backdrop{background:rgba(16,41,45,.7)}
@@ -165,7 +165,7 @@ body{padding-bottom:72px}
 <span class="mk" aria-hidden="true">
 <svg viewBox="0 0 64 64"><path d="M32 12c-6 0-9 3-12 3s-5-1-7 1c-2 3-1 9 1 14 2 6 4 9 5 14 1 4 2 6 4 6s3-3 3-8c0-4 1-6 3-6s3 2 3 6c0 5 1 8 3 8s3-2 4-6c1-5 3-8 5-14 2-5 3-11 1-14-2-2-4-1-7-1s-6-3-12-3z" fill="#DCE6E4"/><path d="M32 12c-6 0-9 3-12 3s-5-1-7 1c-2 3-1 9 1 14 2 6 4 9 5 14 1 4 2 6 4 6s3-3 3-8c0-4 1-6 3-6s3 2 3 6c0 5 1 8 3 8s3-2 4-6c1-5 3-8 5-14 2-5 3-11 1-14-2-2-4-1-7-1s-6-3-12-3z" fill="none" stroke="#2B6B70" stroke-width="1.6"/></svg>
 </span>
-<span class="txt"><strong>ΘΕΟΔΟΣΙΔΗΣ</strong><span>Χειρουργός Οδοντίατρος</span></span>
+<span class="txt"><strong>ΘΕΟΔΟΣΙΔΗΣ ΧΑΡΑΛΑΜΠΟΣ</strong><span>Χειρουργός Οδοντίατρος</span></span>
 </a>
 <nav aria-label="Κύρια πλοήγηση">
 <a href="#philosophy">Φιλοσοφία</a><a href="#doctor">Ο Ιατρός</a><a href="#services">Υπηρεσίες</a><a href="#reviews">Αξιολογήσεις</a><a href="#location">Τοποθεσία</a>
@@ -269,7 +269,7 @@ body{padding-bottom:72px}
 
 <script>
 const S={
-implants:{t:"Χειρουργική Στόματος & Εμφυτεύματα",a:"Τα οδοντικά εμφυτεύματα αποτελούν τη σύγχρονη, μόνιμη και πλέον φυσική λύση για την αντικατάσταση ελλειπόντων δοντιών. Με τη χρήση τιτανίου υψηλής βιοσυμβατότητας, αποκαθιστούμε πλήρως τη μασατική λειτουργία και την αισθητική του στόματος.",b:"Η χειρουργική διαδικασία εκτελείται με απόλυτα ανώδυνα τοπικά πρωτόκολλα, ψηφιακό σχεδιασμό τοποθέτησης και ελάχιστα επεμβατικές τεχνικές για ταχεία επούλωση.",l:["Αντικατάσταση μονών ή πολλαπλών ελλειπόντων δοντιών","Χειρουργική αφαίρεση εγκλείστων φρονιμιτών","Οστική ανάπλαση (μοσχεύματα) & ανύψωση ιγμορείου","Ψηφιακά καθοδηγούμενη τοποθέτηση εμφυτευμάτων"]},
+implants:{t:"Χειρουργική Στόματος & Εμφυτεύματα",a:"Τα οδοντικά εμφυτεύματα αποτελούν τη σύγχρονη, μόνιμη και πλέον φυσική λύση για την αντικατάσταση ελλειπόντων δοντιών. Με τη χρήση τιτανίου υψηλής βιοσυμβατότητας, αποκαθιστούμε πλήρως τη μασητική λειτουργία και την αισθητική του στόματος.",b:"Η χειρουργική διαδικασία εκτελείται με απόλυτα ανώδυνα τοπικά πρωτόκολλα, ψηφιακό σχεδιασμό τοποθέτησης και ελάχιστα επεμβατικές τεχνικές για ταχεία επούλωση.",l:["Αντικατάσταση μονών ή πολλαπλών ελλειπόντων δοντιών","Χειρουργική αφαίρεση εγκλείστων φρονιμιτών","Οστική ανάπλαση (μοσχεύματα) & ανύψωση ιγμορείου","Ψηφιακά καθοδηγούμενη τοποθέτηση εμφυτευμάτων"]},
 aesthetics:{t:"Αισθητική Οδοντιατρική & Όψεις Πορσελάνης",a:"Οι όψεις πορσελάνης και ρητίνης επιτρέπουν τη διόρθωση ατελειών στο σχήμα, το μέγεθος, το χρώμα και τα διαστήματα μεταξύ των δοντιών, προσφέροντας ένα λαμπερό αλλά απόλυτα φυσικό αποτέλεσμα.",b:"Κάθε όψη κατασκευάζεται εξατομικευμένα με βάση τις αναλογίες του προσώπου σας, διατηρώντας τη μέγιστη δυνατή ποσότητα φυσικής οδοντικής ουσίας.",l:["Όψεις Πορσελάνης (Porcelain Veneers)","Όψεις Ρητίνης (Composite Veneers / Bonding)","Αποκατάσταση σπασμένων ή δυσχρωμικών δοντιών","Ανασχεδιασμός γραμμής χαμόγελου"]},
 perio:{t:"Θεραπεία Περιοδοντίου & Αναγέννηση",a:"Η υγεία των ούλων και του υποκείμενου οστού είναι η βάση για κάθε διατηρήσιμο χαμόγελο. Η περιοδοντίτιδα είναι μια χρόνια φλεγμονή που αν δεν αντιμετωπιστεί οδηγεί σε κινητικότητα και απώλεια δοντιών.",b:"Εφαρμόζουμε εξειδικευμένα θεραπευτικά πρωτόκολλα υποουλικής ριζικής απόξεσης και αναγεννητικών τεχνικών για την πλήρη σταθεροποίηση του περιοδοντίου.",l:["Θεραπεία ουλίτιδας & προχωρημένης περιοδοντίτιδας","Υποουλικός καθαρισμός & ριζική απόξεση","Περιοδοντική χειρουργική & μοσχεύματα ούλων","Πρόγραμμα περιοδικής συντήρησης (Recalls)"]},
 endo:{t:"Ενδοδοντική Θεραπεία (Απονεύρωση)",a:"Η ενδοδοντική θεραπεία είναι απαραίτητη όταν ο πολφός (το νεύρο) του δοντιού φλεγμαίνει ή μολύνεται από βαθιά τερηδόνα ή τραύμα. Στόχος μας είναι η διάσωση του φυσικού σας δοντιού.",b:"Με τη χρήση μηχανοκίνητων εργαλείων και ηλεκτρονικών εντοπιστών ακρορριζίου, η θεραπεία ολοκληρώνεται ανώδυνα και με υψηλότατα ποσοστά επιτυχίας.",l:["Πλήρης καθαρισμός και απολύμανση ριζικών σωλήνων","Έμφραξη με βιοσυμβατά ενδοδοντικά υλικά","Επαναληπτικές ενδοδοντικές θεραπείες (αναθεωρήσεις)","Άμεση ανακούφιση από οξύ οδοντικό πόνο"]},
