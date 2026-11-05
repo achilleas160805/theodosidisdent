@@ -256,9 +256,26 @@ dialog[open]{animation:pop .3s var(--ease)}
 .loader-bar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--accent),transparent);transform:translateX(-100%);animation:loaderBar 1.6s var(--ease) infinite}
 @keyframes loaderBar{to{transform:translateX(100%)}}
 
+/* MOBILE MENU */
+.menu-toggle{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;z-index:25}
+.menu-toggle span{display:block;height:2px;width:100%;background:var(--ink);transition:all .3s var(--ease);transform-origin:center}
+.menu-toggle.active span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+.mobile-nav{position:fixed;top:0;right:-100%;width:min(300px,80vw);height:100vh;background:var(--bg-2);border-left:1px solid var(--line-2);z-index:24;transition:right .4s var(--ease);padding:100px 32px 32px;display:flex;flex-direction:column;gap:8px;box-shadow:-10px 0 30px rgba(0,0,0,.3)}
+.mobile-nav.open{right:0}
+.mobile-nav a{padding:16px 0;font-size:1.1rem;font-weight:500;color:var(--ink-soft);border-bottom:1px solid var(--line-2);transition:color .25s,padding-left .3s}
+.mobile-nav a:hover{color:var(--accent);padding-left:8px}
+.mobile-nav .tel-mobile{margin-top:24px;padding:14px;background:var(--accent);color:var(--bg);text-align:center;font-weight:600;border:none;font-size:.9rem}
+.mobile-nav .tel-mobile:hover{background:var(--accent-soft);color:var(--bg);padding-left:14px}
+.overlay{position:fixed;inset:0;background:rgba(26,42,58,.6);backdrop-filter:blur(4px);z-index:23;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.overlay.show{opacity:1;visibility:visible}
+
 .bar{display:none}
 @media(max-width:960px){
 nav{display:none}
+.menu-toggle{display:flex}
 .hero,.doc,.loc,.list{grid-template-columns:1fr}
 .plate{min-height:400px}
 .quotes{grid-template-columns:1fr;gap:36px}
@@ -331,7 +348,20 @@ header .wrap{height:76px}
 <a href="#doctor">Ο Ιατρός</a><a href="#services">Υπηρεσίες</a><a href="#reviews">Αξιολογήσεις</a><a href="#location">Ιατρεία</a>
 </nav>
 <a class="tel" href="tel:2310219927">231 021 9927</a>
+<button class="menu-toggle" id="menuToggle" aria-label="Μενού" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
 </div></header>
+
+<!-- MOBILE NAV -->
+<div class="overlay" id="overlay"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Κινητό μενού">
+<a href="#doctor">Ο Ιατρός</a>
+<a href="#services">Υπηρεσίες</a>
+<a href="#reviews">Αξιολογήσεις</a>
+<a href="#location">Ιατρεία</a>
+<a href="tel:2310219927" class="tel-mobile">231 021 9927</a>
+</nav>
 
 <main>
 <div class="hero">
@@ -504,7 +534,7 @@ window.addEventListener('scroll',()=>{
   const loader=document.getElementById('loader');
   if(!loader)return;
   const start=performance.now();
-  const minTime=1800; // ελάχιστος χρόνος για να παίξει το animation
+  const minTime=1800;
   document.documentElement.style.overflow='hidden';
 
   const finish=()=>{
@@ -524,8 +554,44 @@ window.addEventListener('scroll',()=>{
   } else {
     window.addEventListener('load',trigger,{once:true});
   }
-  // Failsafe - αν κάτι "κολλήσει"
   setTimeout(finish,5000);
+})();
+
+/* ===== MOBILE MENU ===== */
+(function(){
+  const toggle=document.getElementById('menuToggle');
+  const mobileNav=document.getElementById('mobileNav');
+  const overlay=document.getElementById('overlay');
+  if(!toggle||!mobileNav||!overlay)return;
+
+  const close=()=>{
+    toggle.classList.remove('active');
+    mobileNav.classList.remove('open');
+    overlay.classList.remove('show');
+    toggle.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  };
+
+  const open=()=>{
+    toggle.classList.add('active');
+    mobileNav.classList.add('open');
+    overlay.classList.add('show');
+    toggle.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+  };
+
+  toggle.addEventListener('click',()=>{
+    if(mobileNav.classList.contains('open')) close(); else open();
+  });
+  overlay.addEventListener('click',close);
+
+  mobileNav.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click',close);
+  });
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&mobileNav.classList.contains('open')) close();
+  });
 })();
 </script>
 </body>
