@@ -70,9 +70,9 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 @keyframes drawTooth{to{stroke-dashoffset:0}}
 .brand .divider{width:1px;height:38px;background:linear-gradient(180deg,transparent,var(--line),transparent);flex:none}
 .brand .txt{display:flex;flex-direction:column;gap:5px}
-.brand .name{font:500 1rem var(--serif);letter-spacing:.16em;color:var(--ink);text-transform:uppercase;line-height:1}
-.brand .name b{font-weight:500;color:var(--accent-soft)}
-.brand .sub{font:400 .68rem var(--sans);color:var(--ink-mute);letter-spacing:.2em;text-transform:uppercase;line-height:1}
+.brand .name{font:500 1.02rem var(--serif);letter-spacing:.28em;color:var(--ink);text-transform:uppercase;line-height:1}
+.brand .name b{font-weight:400;color:var(--accent-soft)}
+.brand .sub{font:400 .68rem var(--sans);color:var(--ink-mute);letter-spacing:.32em;text-transform:uppercase;line-height:1}
 nav{display:flex;gap:30px;font-size:.85rem;font-weight:500}
 nav a{padding-block:6px;position:relative;color:var(--ink-soft)}
 nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
@@ -81,11 +81,11 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .tel{font-weight:600;letter-spacing:.04em;font-size:.82rem;padding:11px 20px;border:1px solid var(--line);color:var(--ink);transition:all .3s var(--ease)}
 .tel:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
-/* HERO */
-.hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(85vh,780px);position:relative;overflow:hidden}
-.hero-l{position:relative;color:var(--ink);padding:clamp(60px,8vw,120px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden}
+/* HERO — ΛΕΥΚΟ */
+.hero{display:grid;grid-template-columns:1.4fr 1fr;min-height:min(85vh,780px);position:relative;overflow:hidden;background:#FAFCFD}
+.hero-l{position:relative;color:#1A2A3A;padding:clamp(60px,8vw,120px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px;overflow:hidden;background:#FAFCFD}
 .hero-l::before{content:"";position:absolute;inset:-5% 0 -5% 0;
-  background:linear-gradient(115deg,rgba(26,42,58,.9) 0%,rgba(34,55,74,.78) 50%,rgba(44,70,91,.62) 100%),
+  background:linear-gradient(115deg,rgba(250,252,253,.92) 0%,rgba(238,243,248,.85) 50%,rgba(220,232,240,.7) 100%),
   url('hero.jpg') center/cover no-repeat;
   z-index:0;will-change:transform}
 .hero-l>*{position:relative;z-index:1;opacity:0;transform:translateY(24px);animation:heroIn .9s var(--ease) forwards}
@@ -94,28 +94,34 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .hero-l>p{animation-delay:.45s}
 .hero-l>.cta{animation-delay:.6s}
 @keyframes heroIn{to{opacity:1;transform:translateY(0)}}
-.hero-l small{font-size:.82rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
-.hero-l small::before{content:"";width:30px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;animation:lineIn .8s var(--ease) .5s forwards}
+.hero-l small{font-size:.82rem;color:#3D7A9E;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.hero-l small::before{content:"";width:30px;height:1px;background:#3D7A9E;transform:scaleX(0);transform-origin:left;animation:lineIn .8s var(--ease) .5s forwards}
 @keyframes lineIn{to{transform:scaleX(1)}}
-.hero-l h1{font-size:clamp(2.3rem,4.8vw,4.1rem);max-width:16ch;line-height:1.1}
-.hero-l h1 em{font-style:normal;color:var(--accent-soft)}
-.hero-l p{max-width:48ch;color:var(--ink-soft);font-size:1rem;font-weight:400}
+.hero-l h1{font-size:clamp(1.7rem,3.2vw,2.8rem);max-width:20ch;line-height:1.18;color:#1A2A3A}
+.hero-l h1 em{font-style:normal;color:#3D7A9E}
+.hero-l p{max-width:48ch;color:#4A5D6E;font-size:1rem;font-weight:400}
+.hero-l .btn.solid{background:#1A2A3A;color:#FAFCFD;border-color:#1A2A3A}
+.hero-l .btn.solid:hover{background:#3D7A9E;border-color:#3D7A9E;color:#FAFCFD}
+.hero-l .btn.line{border-color:rgba(26,42,58,.25);color:#1A2A3A}
+.hero-l .btn.line:hover{border-color:#3D7A9E;color:#3D7A9E}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-.hero-r{padding:clamp(40px,6vw,80px) var(--pad);display:flex;flex-direction:column;justify-content:center;background:var(--bg-2);border-left:1px solid var(--line-2)}
-.hero-r h2{font:600 .72rem var(--sans);color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;max-width:none;opacity:0;transform:translateY(14px);animation:heroIn .8s var(--ease) .3s forwards}
-.hero-r .item{padding-block:22px;border-top:1px solid var(--line-2);opacity:0;transform:translateY(18px);animation:heroIn .8s var(--ease) forwards;position:relative;transition:padding-left .4s var(--ease)}
+.hero-r{padding:clamp(40px,6vw,80px) var(--pad);display:flex;flex-direction:column;justify-content:center;background:#EEF3F8;border-left:1px solid rgba(26,42,58,.08)}
+.hero-r h2{font:600 .72rem var(--sans);color:#3D7A9E;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;max-width:none;opacity:0;transform:translateY(14px);animation:heroIn .8s var(--ease) .3s forwards}
+.hero-r .item{padding-block:22px;border-top:1px solid rgba(26,42,58,.1);opacity:0;transform:translateY(18px);animation:heroIn .8s var(--ease) forwards;position:relative;transition:padding-left .4s var(--ease)}
 .hero-r .item:nth-of-type(1){animation-delay:.5s}
 .hero-r .item:nth-of-type(2){animation-delay:.65s}
 .hero-r .item:nth-of-type(3){animation-delay:.8s}
-.hero-r .item::before{content:"";position:absolute;left:0;top:22px;width:0;height:1px;background:var(--accent);transition:width .4s var(--ease)}
+.hero-r .item::before{content:"";position:absolute;left:0;top:22px;width:0;height:1px;background:#3D7A9E;transition:width .4s var(--ease)}
 .hero-r .item:hover{padding-left:16px}
 .hero-r .item:hover::before{width:10px}
-.hero-r h3{font-size:1.2rem;margin-bottom:6px;color:var(--ink);transition:color .3s var(--ease)}
-.hero-r .item:hover h3{color:var(--accent-soft)}
-.hero-r p{font-size:.88rem;color:var(--ink-mute)}
-.hero-r footer{display:flex;justify-content:space-between;border-top:1px solid var(--line-2);padding-top:18px;font-size:.72rem;font-weight:600;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;opacity:0;animation:heroIn .8s var(--ease) .95s forwards}
+.hero-r h3{font-size:1.2rem;margin-bottom:6px;color:#1A2A3A;transition:color .3s var(--ease)}
+.hero-r .item:hover h3{color:#3D7A9E}
+.hero-r p{font-size:.88rem;color:#7A8E9E}
+.hero-r footer{display:flex;justify-content:space-between;border-top:1px solid rgba(26,42,58,.1);padding-top:18px;font-size:.72rem;font-weight:600;color:#3D7A9E;letter-spacing:.1em;text-transform:uppercase;opacity:0;animation:heroIn .8s var(--ease) .95s forwards}
 
-/* DOC */
+/* DOC — ΜΠΛΕ */
+#philosophy{background:var(--bg);color:var(--ink)}
+#philosophy h2{color:var(--ink)}
 .doc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,100px);align-items:stretch}
 .plate{position:relative;color:var(--ink);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:flex-end;min-height:520px;overflow:hidden;border:1px solid var(--line-2)}
 .plate::before{content:"";position:absolute;inset:0;
@@ -129,7 +135,7 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .plate i{margin-top:28px;padding-top:16px;border-top:1px solid var(--line-2);font-style:normal;font-size:.78rem;color:var(--ink-mute)}
 .doc-t{display:flex;flex-direction:column;gap:24px;justify-content:center}
 .doc-t p{max-width:60ch;color:var(--ink-soft)}
-.doc-t p strong{color:var(--ink);font-weight:600}
+.doc-t p strong{color:var(--ink);font-weight:700}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-top:28px;border-top:1px solid var(--line-2)}
 .pillars>div{transition:transform .4s var(--ease)}
 .pillars>div:hover{transform:translateY(-4px)}
@@ -138,10 +144,20 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .pillars>div:hover h3 svg{transform:scale(1.1) rotate(-4deg)}
 .pillars p{font-size:.85rem;color:var(--ink-mute);line-height:1.6}
 
-/* SERVICES */
-.services{background:var(--bg-2);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+/* SERVICES — ΛΕΥΚΟ */
+#services{background:#FAFCFD;border-top:1px solid rgba(26,42,58,.06);border-bottom:1px solid rgba(26,42,58,.06)}
+#services h2{color:#1A2A3A}
+#services .head p{color:#5A6D7E}
+#services .row{border-top-color:rgba(26,42,58,.1)}
+#services .row:nth-last-child(2),#services .row:last-child{border-bottom-color:rgba(26,42,58,.1)}
+#services .row::before{background:linear-gradient(90deg,rgba(61,122,158,.08),transparent)}
+#services .row h3{color:#1A2A3A}
+#services .row p{color:#5A6D7E}
+#services .row span{color:#3D7A9E}
+#services .row:hover h3{color:#3D7A9E}
+
 .head{display:flex;justify-content:space-between;align-items:end;gap:36px;flex-wrap:wrap;margin-bottom:52px}
-.head p{max-width:36ch;color:var(--ink-mute);font-size:.9rem}
+.head p{max-width:36ch;font-size:.9rem}
 .list{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(36px,6vw,100px)}
 .row{all:unset;box-sizing:border-box;display:grid;gap:8px;padding:32px 0;border-top:1px solid var(--line-2);cursor:pointer;position:relative;transition:padding-left .45s var(--ease)}
 .row:nth-child(1){transition-delay:0s}
@@ -150,19 +166,20 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .row:nth-child(4){transition-delay:.15s}
 .row:nth-child(5){transition-delay:.2s}
 .row:nth-child(6){transition-delay:.25s}
-.row:last-child,.row:nth-last-child(2){border-bottom:1px solid var(--line-2)}
-.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(142,180,206,.05),transparent);transition:width .5s var(--ease);pointer-events:none}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;transition:width .5s var(--ease);pointer-events:none}
 .row:hover{padding-left:22px}
 .row:hover::before{width:100%}
-.row:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
-.row h3{font-size:1.25rem;transition:color .25s;color:var(--ink)}
-.row p{color:var(--ink-mute);font-size:.88rem;max-width:52ch;line-height:1.65}
-.row span{font-size:.78rem;font-weight:600;color:var(--accent);margin-top:8px;display:inline-flex;align-items:center;gap:8px;letter-spacing:.06em}
+.row:focus-visible{outline:2px solid #3D7A9E;outline-offset:6px}
+.row h3{font-size:1.25rem;transition:color .25s}
+.row p{font-size:.88rem;max-width:52ch;line-height:1.65}
+.row span{font-size:.78rem;font-weight:600;margin-top:8px;display:inline-flex;align-items:center;gap:8px;letter-spacing:.06em}
 .row span::after{content:"→";transition:transform .35s var(--ease)}
 .row:hover span::after{transform:translateX(6px)}
-.row:hover h3{color:var(--accent-soft)}
 
-/* REVIEWS */
+/* REVIEWS — ΜΠΛΕ */
+#reviews{background:var(--bg-2);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);color:var(--ink)}
+#reviews h2{color:var(--ink)}
+#reviews .head p{color:var(--ink-mute)}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr)}
 .quotes figure{padding:8px clamp(20px,3vw,40px) 8px 0;margin-right:clamp(20px,3vw,40px);border-right:1px solid var(--line-2);display:flex;flex-direction:column;justify-content:space-between;gap:28px;transition:transform .5s var(--ease)}
 .quotes figure:hover{transform:translateY(-4px)}
@@ -174,35 +191,37 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .quotes figcaption b{display:block;color:var(--accent);font-weight:600;margin-bottom:3px;letter-spacing:.06em;font-size:.78rem}
 .more{margin-top:52px}
 
-/* LOCATION */
-.place{background:var(--bg);position:relative;overflow:hidden}
-.place::before{content:"";position:absolute;inset:0;
+/* LOCATION — ΛΕΥΚΟ */
+#location{background:#FAFCFD;color:#1A2A3A;position:relative;overflow:hidden}
+#location::before{content:"";position:absolute;inset:0;
   background:url('hero.jpg') center/cover no-repeat;
-  opacity:.06;z-index:0}
-.place .wrap{position:relative;z-index:2}
+  opacity:.05;z-index:0}
+#location .wrap{position:relative;z-index:2}
+#location h2{color:#1A2A3A}
 .loc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,100px);align-items:start}
 .loc-t{display:flex;flex-direction:column;gap:28px}
-.loc-t>p{color:var(--ink-soft);max-width:52ch}
+.loc-t>p{color:#4A5D6E;max-width:52ch}
 .loc .branches{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
-.branch{padding-block:22px;border-top:1px solid var(--line-2);position:relative;transition:padding-left .4s var(--ease)}
-.branch::after{content:"";position:absolute;top:-1px;left:0;width:24px;height:1px;background:var(--accent);transition:width .5s var(--ease)}
+.branch{padding-block:22px;border-top:1px solid rgba(26,42,58,.12);position:relative;transition:padding-left .4s var(--ease)}
+.branch::after{content:"";position:absolute;top:-1px;left:0;width:24px;height:1px;background:#3D7A9E;transition:width .5s var(--ease)}
 .branch:hover::after{width:56px}
 .branch:hover{padding-left:8px}
-.branch h4{font:600 .78rem var(--sans);color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:8px;letter-spacing:.1em;text-transform:uppercase}
-.branch h4 svg{width:14px;height:14px;fill:none;stroke:var(--accent);stroke-width:1.8}
-.branch p{font-size:.9rem;color:var(--ink-soft);line-height:1.6}
+.branch h4{font:600 .78rem var(--sans);color:#3D7A9E;margin-bottom:10px;display:flex;align-items:center;gap:8px;letter-spacing:.1em;text-transform:uppercase}
+.branch h4 svg{width:14px;height:14px;fill:none;stroke:#3D7A9E;stroke-width:1.8}
+.branch p{font-size:.9rem;color:#4A5D6E;line-height:1.6}
 .branch p+p{margin-top:4px}
-.branch a{color:var(--ink);font-weight:500;border-bottom:1px solid var(--line);padding-bottom:1px}
-.branch a:hover{color:var(--accent);border-color:var(--accent)}
+.branch a{color:#1A2A3A;font-weight:600;border-bottom:1px solid rgba(26,42,58,.2);padding-bottom:1px}
+.branch a:hover{color:#3D7A9E;border-color:#3D7A9E}
 .map{display:flex;flex-direction:column;gap:14px}
-.map iframe{width:100%;height:420px;border:1px solid var(--line-2);filter:grayscale(1) invert(.92) contrast(.9);transition:filter .4s var(--ease)}
-.map iframe:hover{filter:grayscale(.3) invert(.92) contrast(.9)}
-.map .tabs{display:flex;gap:0;border:1px solid var(--line-2)}
-.map .tabs a{padding:12px 20px;font-size:.78rem;font-weight:600;color:var(--ink-soft);transition:all .25s var(--ease);flex:1;text-align:center;letter-spacing:.04em}
-.map .tabs a:hover{color:var(--accent)}
-.map .tabs a.on{background:var(--accent);color:var(--bg)}
+.map iframe{width:100%;height:420px;border:1px solid rgba(26,42,58,.12);transition:filter .4s var(--ease)}
+.map .tabs{display:flex;gap:0;border:1px solid rgba(26,42,58,.12)}
+.map .tabs a{padding:12px 20px;font-size:.78rem;font-weight:600;color:#4A5D6E;transition:all .25s var(--ease);flex:1;text-align:center;letter-spacing:.04em}
+.map .tabs a:hover{color:#3D7A9E}
+.map .tabs a.on{background:#1A2A3A;color:#FAFCFD}
+#location .btn.line{border-color:rgba(26,42,58,.25);color:#1A2A3A}
+#location .btn.line:hover{border-color:#3D7A9E;color:#3D7A9E}
 
-/* FOOTER */
+/* FOOTER — ΜΠΛΕ */
 footer.f{background:var(--bg-2);border-top:1px solid var(--line-2);padding-block:44px;font-size:.84rem;color:var(--ink-mute)}
 footer.f .wrap{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
 footer.f strong{display:block;font:500 1rem var(--serif);letter-spacing:.08em;color:var(--ink);margin-bottom:6px}
@@ -223,27 +242,6 @@ dialog[open]{animation:pop .3s var(--ease)}
 .x{position:absolute;top:14px;right:14px;width:40px;height:40px;background:none;border:1px solid var(--line-2);cursor:pointer;font-size:1.05rem;color:var(--ink);transition:all .25s var(--ease)}
 .x:hover{background:var(--accent);color:var(--bg);border-color:var(--accent);transform:rotate(90deg)}
 .d .btn{align-self:flex-start;margin-top:10px}
-
-/* ===== LIGHT BREAK SECTIONS ===== */
-#philosophy{background:#FAFCFD}
-#philosophy h2{color:#1A2A3A}
-#philosophy .doc-t>p{color:#4A5D6E}
-#philosophy .doc-t>p strong{color:#1A2A3A;font-weight:700}
-#philosophy .pillars{border-top-color:rgba(26,42,58,.1)}
-#philosophy .pillars h3{color:#1A2A3A}
-#philosophy .pillars h3 svg{stroke:#3D7A9E}
-#philosophy .pillars p{color:#7A8E9E}
-
-#reviews{background:#EEF3F8;border-top:1px solid rgba(26,42,58,.06);border-bottom:1px solid rgba(26,42,58,.06)}
-#reviews h2{color:#1A2A3A}
-#reviews .head p{color:#5A6D7E}
-#reviews .quotes figure{border-right-color:rgba(26,42,58,.1)}
-#reviews .quotes .qm{fill:#3D7A9E;opacity:.45}
-#reviews .quotes blockquote{color:#1A2A3A}
-#reviews .quotes figcaption{color:#7A8E9E}
-#reviews .quotes figcaption b{color:#3D7A9E}
-#reviews .more{border-color:rgba(26,42,58,.2);color:#1A2A3A}
-#reviews .more:hover{border-color:#3D7A9E;color:#3D7A9E}
 
 /* SCROLL REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);will-change:opacity,transform}
@@ -311,8 +309,8 @@ body{padding-bottom:72px}
 .tel{display:none}
 .pillars{grid-template-columns:1fr}
 header .wrap{height:76px}
-.brand .name{font-size:.88rem;letter-spacing:.1em}
-.brand .sub{font-size:.6rem;letter-spacing:.16em}
+.brand .name{font-size:.9rem;letter-spacing:.2em}
+.brand .sub{font-size:.6rem;letter-spacing:.24em}
 .brand .divider{height:32px}
 .bar{display:flex;gap:6px;position:fixed;inset:auto 0 0;z-index:30;padding:10px;background:rgba(26,42,58,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line-2)}
 .bar a{padding:13px 8px;text-align:center;font-weight:600;font-size:.76rem;border:1px solid var(--line-2);color:var(--ink);letter-spacing:.04em;flex:1}
@@ -418,7 +416,7 @@ header .wrap{height:76px}
 </div>
 </div></section>
 
-<section id="services" class="services"><div class="wrap">
+<section id="services"><div class="wrap">
 <div class="head reveal"><h2>Εξειδικευμένες Θεραπείες</h2><p>Επιλέξτε οποιαδήποτε θεραπεία για να ανακαλύψετε τις αναλυτικές πληροφορίες.</p></div>
 <div class="list reveal-stagger">
 <button class="row" data-k="implants"><h3>Χειρουργική Στόματος &amp; Εμφυτεύματα</h3><p>Τοποθέτηση οδοντικών εμφυτευμάτων τελευταίας γενιάς, εξαγωγές εγκλείστων φρονιμιτών και οστική ανάπλαση με απόλυτη ασφάλεια.</p><span>Αναλυτικές πληροφορίες</span></button>
@@ -440,7 +438,7 @@ header .wrap{height:76px}
 <a class="btn line more reveal" href="https://www.google.com/maps/search/?api=1&query=Θεοδοσίδης+Χαράλαμπος+Οδοντίατρος+Αγίου+Γεωργίου+3+Θεσσαλονίκη" target="_blank" rel="noopener">Αξιολογήσεις στο Google</a>
 </div></section>
 
-<section id="location" class="place"><div class="wrap loc">
+<section id="location"><div class="wrap loc">
 <div class="loc-t dark">
 <h2 class="reveal">Δύο Ιατρεία σε Θεσσαλονίκη &amp; Χαλκιδική</h2>
 <p class="reveal">Ο Χαράλαμπος Θεοδοσίδης διατηρεί διπλή έδρα — στο ιστορικό κέντρο της Θεσσαλονίκης (πλησίον Ροτόντας) και στην Παλαιόχωρα Χαλκιδικής. Η προσέλευση γίνεται κατόπιν τηλεφωνικής συνεννόησης.</p>
